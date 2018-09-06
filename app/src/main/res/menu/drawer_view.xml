@@ -1,0 +1,58 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_insulina"
+            android:icon="@drawable/ic_action_insulina_vers_5xxxhdpi"
+            android:title="@string/insulina_talk" />
+        <item
+            android:id="@+id/nav_hypo"
+            android:icon="@drawable/ic_priority_high_black_24dp"
+            android:title="@string/emergency" />
+        <item
+            android:id="@+id/nav_bluetooth"
+            android:icon="@drawable/ic_bluetooth_black_24dp"
+            android:title="@string/receive_recordings" />
+        <item
+            android:id="@+id/nav_reminder"
+            android:icon="@drawable/ic_reminder"
+            android:title="@string/reminders" />
+        <item
+            android:id="@+id/nav_advice"
+            android:icon="@drawable/ic_live_help_black_24dp"
+            android:title="@string/advice" />
+    </group>
+
+    <item android:title="@string/support">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_help"
+                    android:icon="@drawable/ic_help_outline_black_24dp"
+                    android:title="@string/help" />
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_settings"
+                    android:title="@string/Settings" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_exit_to_app_black_24dp"
+                    android:title="@string/log_out"
+                    />
+                <!--<item-->
+                    <!--android:id="@+id/nav_about"-->
+                    <!--android:icon="@drawable/ic_assignment_ind_black_24dp"-->
+                    <!--android:title="@string/about_sugar_control"-->
+                    <!--/>-->
+
+            </group>
+        </menu>
+    </item>
+
+
+</menu>

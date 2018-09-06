@@ -1,0 +1,302 @@
+<resources>
+
+    //general strings
+    <string name="app_name">Sugar Control</string>
+
+    //AppBar
+    <string name="action_save">SAVE</string>
+    <string name="back">Back</string>
+
+    //initial activity
+    <string name="title_sugar_control">Sugar\nControl</string>
+    <string name="join_now">Join now</string>
+    <string name="btn_login">Already a User?</string>
+    <string name="have_an_account_already">Have an account already?</string>
+
+    //log in strings
+    <string name="new_to_sugar_control">New To Sugar Control?</string>
+    <string name="btn_forgot_password">Forgot password?</string>
+
+    //registration
+    <string name="diabetes_type">Diabetes Type:</string>
+    <string name="bgl_range_registration_text">Target for your blood glucose level:  (in mmol/L)</string>
+    <string name="action_sign_in_short">Register</string>
+    <string name="email">Email</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="change_email">Change Email</string>
+    <string name="change_password">Change Password</string>
+    <string name="send_password_reset_email">Send Password reset email</string>
+    <string name="remove_user">Remove user</string>
+    <string name="new_pass">New Password</string>
+
+    //AfterSignUp
+    <string name="about_alpha_test">Welcome to Sugar Control!</string>
+    <string name="btn_to_tips_from_after_sign">Get some tips on \nHow to use Sugar Control -></string>
+
+    //home
+    <string name="record_hba1c"> Record \nHbA1c</string>
+    <string name="record_bgl">Glucose Level</string>
+    <string name="record_medicine">Record \nMedicine</string>
+    <string name="txt_history">History</string>
+    <string name="txt_stats">Statistics</string>
+
+    //options
+    <string name="change_theme">Change Your Theme</string>
+    <string name="change_language">Change Language</string>
+    <string name="vertical_ellipsis">&#8942;</string>
+
+    //record
+    <string name="select_time">Select Time</string>
+    <string name="select_date">Select Date</string>
+    <string name="more">more -></string>
+    <string name="what_is_your_blood_glucose_level">What is your glucose level?</string>
+    <string name="notes_title">Notes (optional):</string>
+    <string name="double_tap_to_save">Double tap to save!</string>
+    <string name="record_using_nfc">record using nfc device</string>
+
+    //history
+
+    //Insulina
+    <string name="what_s_on_your_mind">Enter your query</string>
+    <string name="translation_label">Translation:</string>
+    <string name="translate">translate</string>
+    <string name="input_hint">enter text</string>
+    <string name="target_language">Target Language</string>
+    <string name="spanish">Spanish</string>
+    <string name="french">French</string>
+    <string name="italian">Italian</string>
+    <string name="microphone">Microphone</string>
+    <string name="play">Play</string>
+
+
+    //titles
+    <string name="title_activity_main">Home</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_sign_up">Sign up</string>
+    <string name="title_activity_record">Record an Entry</string>
+    <string name="title_previous_records">Previous Entries</string>
+    <string name="title_statistics">Statistics</string>
+
+
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="weight"></string>
+
+    //main page
+
+
+    //navi drawer
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    //stats page
+    <string name="main_screen_text_1">Todays average reading:</string>
+    <string name="number_of_entries">Number of entries:</string>
+    <string name="main_screen_report_title">Today:</string>
+    <string name="entries_in_range">Entries in range:</string>
+    <string name="entries_below_range">Entries below range</string>
+    <string name="entries_above_range">Entries above range</string>
+    <string name="avg_blood_glucose_level">Average today:</string>
+    <string name="weekly_stats">This Week:</string>
+    <string name="weekly_bgl_stats">Weekly blood\nglucose  average</string>
+    <string name="title_monthly_avg">This Month:</string>
+    <string name="monthly_blg_stat">Monthly blood\nglucose average</string>
+    <string name="statistics_screen_title">Blood Glucose</string>
+
+
+    <string name="medicine_tour">The first allows you to record your medicine. The second, your blood glucose levels, and the third your hba1c level.</string>
+
+
+    <string name="whatisdiabetesdetail">Diabetes is a serious, lifelong condition where your blood glucose level is too high. There are two main types,Type 1andType 2. They’re different conditions, but they’re both serious. There are some other rarer types of diabetes too. </string>
+    <string name="howCanIManage">Exercise, positive habits and diet. Controlling your carb intake is the only way to truly control T2. It takes awhile to get used to, but once you do it\'s no big deal. How low you want to go is up to you, you don't need to get Keto low to have really good control, either.</string>
+    <string name="howtotakebgl">In order to take you blood glucose levels, you\'ll need to get yourself a bloog glucose monitoring kit. In the UK, this is usually supplied by your General practition. It is vital that you record and manage your blood glucose levels. Your medical team should ensure that you are comfortable in taking your own blood glcuose levels, or having someone you trust do so.</string>
+    <string name="amIdoomed">No! Diabetes can be managed with proper care. Diabetes is a chronic (life-long) condition that can have serious consequences. However, with careful attention to your blood sugar control, lifestyle modifications and medications, you can manage your diabetes and may avoid many of the problems associated with the disease.</string>
+
+    <string name="whatisHypo">A hypo (hypoglycemia) is triggered when blood sugar levels fall under 4 mmol/L.
+
+Too much insulin or too little food can spark a hypo</string>
+
+    <string name="whatIsHyper"> Hyperglycemia occurs when people with diabetes have too much sugar in their bloodstream.
+
+Hyperglycemia should not be confused with hypoglycemia, which is when blood sugar levels go too low. You should aim to avoid spending long periods of time with high blood glucose levels.</string>
+
+    <string name="whatdo">Follow these steps if your blood sugar is less than 4mmol/L or you have hypo symptoms:
+
+    Have a sugary drink or snack – try something like a small glass of non-diet fizzy drink or fruit juice, a small handful of sweets, or four or five dextrose tablets.
+    Test your blood sugar after 10-15 minutes – if it\'s 4mmol or above and you feel better, move on to step 3. If it\'s still below 4mmol, treat again with a sugary drink or snack and take another reading in 10-15 minutes.
+    Eat your main meal (containing carbohydrate) if you're about to have it or have a carbohydrate-containing snack – this could be a slice of toast with spread, a couple of biscuits or a glass of milk.
+
+You don't usually need to get medical help once you're feeling better if you only have a few hypos, but tell your diabetes team if you keep having them or if you stop having symptoms when your blood sugar goes low.</string>
+
+    <string name="whatdohyper">Before deciding how to treat one episode of high blood glucose, it is important to figure out why the number is high. Some possible causes include eating a heavy meal, not getting enough physical activity, forgetting to take diabetes medication, and dealing with illness and stress.
+
+Insulin is the medication that will bring blood glucose down the fastest.
+    Apart from administering insulin, the fastest way to lower your blood glucose is to engage in physical activity. Exercise results in an increased sensitivity to insulin. It causes your muscle cells to take up more glucose, leaving less of it to circulate in your bloodstream during and after the physical activity (which means a lower blood glucose when you test). </string>
+
+    <string name="signsofhypo">Early signs and symptoms of diabetic hypoglycemia include: Shakiness. Dizziness. Sweating.</string>
+    <string name="signsofhyper">Your blood sugar may be too high if you are very thirsty and tired, have blurry vision, are losing weight fast, and have to go to the bathroom often. Very high blood sugar may make you feel sick to your stomach, faint, or throw up. It can cause you to lose too much fluid from your body.</string>
+    <string name="btn_link_to_register">Not a member? Tap here to get registered!</string>
+    <string name="btn_link_to_login">Already registered. Login Me!</string>
+    <string name="title_activity_reset_password">Reset Password</string>
+    <string name="prompt_password">Prompt password?</string>
+    <string name="btn_reset_password">Reset Password</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="hint_new_email">New Email</string>
+    <string name="btn_change">Change</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_remove">Remove</string>
+    <string name="btn_back_to_home_screen">Link Accounts</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="btnProfile">profile</string>
+    <string name="lbl_forgot_password">Forgot password?</string>
+    <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="options">Options</string>
+    <string name="add_post">Add Post</string>
+
+    <!--<string name="drawer_open">Open navigation drawer</string>-->
+    <!--<string name="drawer_close">Close navigation drawer</string>-->
+
+    //reminder
+    <string name="add_reminder">Reminder</string>
+    <string name="details">Details</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="repeat">Repeat</string>
+    <string name="reminder_set_txt_view">Set the Reminders\ntime and date</string>
+    <string name="reminder_insulina_text">No reminder set yet. Want me to remind you to take a recording?</string>
+    <string name="action_discard_reminder">Discard Reminder</string>
+    <string name="cancel_reminder">cancel the\nReminder</string>
+    <string name="set_the_reminder">set the\nReminder</string>
+    <string name="discard">Discard</string>
+
+    <string name="delete_dialog_msg">Delete this Reminder?</string>
+
+    <string name="delete">Delete</string>
+
+    <string name="cancel">Cancel</string>
+
+    <string name="reminder_title">Alarm Reminder</string>
+
+    <string name="hypo_emergency_btn">Call\n Emergency\n contact</string>
+    <string name="hypo_advice">Hypo advice</string>
+    <string name="set_emergency_contact">Set the Emergency Contact</string>
+    <string name="widget_title">HYPO\nEMERGENCY</string>
+
+    <!--<string-array name="occurence">-->
+        <!--<item>Once</item>-->
+        <!--<item>Weekly</item>-->
+    <!--</string-array>-->
+
+    <!--<string-array name="pref_alarm_play_time_entries">-->
+        <!--<item>10 seconds</item>-->
+        <!--<item>30 seconds</item>-->
+        <!--<item>1 minute</item>-->
+        <!--<item>2 minutes</item>-->
+        <!--<item>3 minutes</item>-->
+        <!--<item>5 minutes</item>-->
+    <!--</string-array>-->
+
+    <!--<string-array name="pref_alarm_play_time_values">-->
+        <!--<item>10</item>-->
+        <!--<item>30</item>-->
+        <!--<item>60</item>-->
+        <!--<item>120</item>-->
+        <!--<item>180</item>-->
+        <!--<item>300</item>-->
+    <!--</string-array>-->
+
+    <string name="Glucose_level">Glucose Level</string>
+    <string name="HbA1c">HbA1c</string>
+    <string name="Medicine">medicine</string>
+
+    //statistics page
+    <string name="the_level_of_glucose">The level of\n glucose, mmol/L</string>
+    <string name="normal_levels">Normal Levels</string>
+    <string name="normal_range_num">4.4 - 6.1</string>
+    <string name="average_7_days">Average 7 days</string>
+    <string name="hint_number">Number</string>
+    <string name="avg_this_month">Average This Month</string>
+    <string name="avg_monthly_num">4.4 - 6.1</string>
+    <string name="glucose_max">Maximum entry</string>
+    <string name="glucose_min">Minimum entry</string>
+    <string name="standard_deviation">Standard deviation</string>
+
+    
+    //record hba1c
+    <string name="what_is_your_hba">What is your hbA1c reading?</string>
+    <string name="hint_reading">Reading</string>
+    <string name="notes">Notes:</string>
+    <string name="enter_hba_details">Enter details about HbA1c result here</string>
+    
+    //record activity
+    <string name="what_time">What Time?</string>
+    
+    
+    //nav_header
+    <string name="welcome">Welcome!</string>
+    
+    //medication
+    <string name="starting_medication">Let\'s get Started!</string>
+    <string name="add_medication">add medication</string>
+    <string name="select_medication">Please select your medication:</string>
+    <string name="what_type_meds">What type of treatment do you take?</string>
+    <string name="next">Next</string>
+    <string name="how_much_insulin">How much insulin did you take?</string>
+    <string name="units">Units</string>
+    <string name="what_type">What type?</string>
+    <string name="brand">Brand name?</string>
+
+    //navi drawer
+    <string name="home">Home</string>
+    <string name="insulina_talk">Talk to Insulina</string>
+    <string name="emergency">Emergency</string>
+    <string name="receive_recordings">Receive Recordings</string>
+    <string name="reminders">Reminders</string>
+    <string name="support">Support</string>
+    <string name="advice">Advice</string>
+    <string name="help">Help</string>
+    <string name="Settings">Settings</string>
+    <string name="log_out">Log out</string>
+    <string name="about_sugar_control">About Sugar Control</string>
+
+    <string name="insulina_normal">Your latest reading was\n </string>
+    <string name="insulina_normal_2">mmol/L\nIt\'s in range, so keep it up!</string>
+    <string name="insulina_high">Your previous reading was quite high. If you haven\'t taken your medication, do so!</string>
+    <string name="insulina_low">Your previous reading was quite low. Please treat this as soon as!</string>
+
+    <string name="mock_record_title">Previous blood glucose levels</string>
+    <string name="view_privacy_policy">View privacy policy</string>
+    <string name="privacy_policy_1">Abdikariim Timer built the Sugar Control app as a Free app. This SERVICE is provided by Abdikariim Timer at no cost and is intended for use as is.
+\n
+This page is used to inform website visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
+\n
+If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
+\n
+The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at Sugar Control unless otherwise defined in this Privacy Policy.</string>
+<string name="privacy_policy_2">Information Collection and Use</string>
+    <string name="privacy_policy_3">For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information, including but not limited to Blood glucose levels, HbA1c levels, email adresses and full names. The information that I request is retained on your device and is not collected by me in any way
+\n
+The app does use third party services that may collect information used to identify you.
+\n
+Link to privacy policy of third party service providers used by the app:</string>
+   <string name="privacy_policy_4">Log Data</string>
+   <string name="privacy_policy_5">I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.</string>
+   <string name="privacy_policy_6">Cookies</string>
+   <string name="privacy_policy_7">Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device\'s internal memory.
+\n
+This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.</string>
+   <string name="privacy_policy_8">Security</string>
+   <string name="privacy_policy_9">I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.
+</string>
+   <string name="privacy_policy_10">Children\’s Privacy</string>
+   <string name="privacy_policy_11">These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.</string>
+   <string name="privacy_policy_12">Changes to This Privacy Policy</string>
+   <string name="privacy_policy_13">I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.</string>
+   <string name="privacy_policy_14">Contact Us</string>
+   <string name="privacy_policy_15">If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me.</string>
+</resources>

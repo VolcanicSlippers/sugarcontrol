@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "869688151434",
+    "firebase_url": "https://sugarcontrol-3f571.firebaseio.com",
+    "project_id": "sugarcontrol-3f571",
+    "storage_bucket": "sugarcontrol-3f571.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869688151434:android:c86b6e01dd7ad4d4",
+        "android_client_info": {
+          "package_name": "com.karimtimer.sugarcontrol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869688151434-j57erbu47p56o09ddmhnlb21qgouujvs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.karimtimer.sugarcontrol",
+            "certificate_hash": "68b0490a2ad59bc56022ae55d7f995dc3e07f1b8"
+          }
+        },
+        {
+          "client_id": "869688151434-akguhe15tpu3ij98qno02a9mhjq84gde.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwkVDwsxs58eVLLEgCuKiJlD66oPbAehg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869688151434-akguhe15tpu3ij98qno02a9mhjq84gde.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

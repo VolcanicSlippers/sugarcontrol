@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="196dp"
+        app:srcCompat="@drawable/speech_01xxhdpi" />
+
+    <TextView
+        android:textColor="@color/primary_text"
+        android:id="@+id/reminder_txt_view"
+        android:layout_width="254dp"
+        android:layout_height="121dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="21dp"
+        android:text="@string/reminder_insulina_text"
+        android:textSize="25sp" />
+    <ImageView
+        android:id="@+id/insulina_reminders_page"
+        android:layout_width="160dp"
+        android:layout_height="173dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="199dp"
+        app:srcCompat="@drawable/insulina_vers_5xxxhdpi" />
+
+    <!--<EditText-->
+        <!--android:visibility="invisible"-->
+        <!--android:id="@+id/edit_text_title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginBottom="84dp"-->
+        <!--android:hint="Name the reminder" />-->
+
+
+
+    <TextView
+        android:id="@+id/text_instructions_reminder"
+        android:textColor="@color/primary_text"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/insulina_reminders_page"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:text="@string/reminder_set_txt_view" />
+
+    <Button
+        android:background="@color/white"
+        android:layout_toLeftOf="@+id/insulina_reminders_page"
+        android:layout_centerInParent="true"
+        android:id="@+id/btn_send_channel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sendOnChannel1"
+        android:text="@string/set_the_reminder"
+        android:textAllCaps="false" />
+
+    <Button
+        android:background="@color/white"
+        android:layout_toRightOf="@+id/insulina_reminders_page"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sendOnChannel1"
+        android:text="@string/cancel_reminder"
+        android:textAllCaps="false" />
+
+
+        <Button
+            android:layout_below="@+id/text_instructions_reminder"
+            android:id="@+id/btn_time_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/division"
+            android:background="@color/white"
+            android:text="@string/select_time"
+            android:textAllCaps="false" />
+
+    <Button
+        android:visibility="invisible"
+        android:id="@+id/division"
+        android:layout_below="@+id/text_instructions_reminder"
+        android:layout_centerInParent="true"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content" />
+        <Button
+            android:layout_below="@+id/text_instructions_reminder"
+            android:layout_toRightOf="@+id/division"
+            android:id="@+id/btn_date_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="@string/select_date"
+            android:textAllCaps="false" />
+
+</RelativeLayout>

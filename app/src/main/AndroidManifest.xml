@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.karimtimer.sugarcontrol"
+    >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.bluetooth.device.action.FOUND"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+
+
+    <uses-permission
+        android:name="android.permission.RECEIVE_BOOT_COMPLETE D" />
+
+
+    <application
+        android:name=".Reminder.App"
+        android:allowBackup="true"
+        android:icon="@drawable/sugar_control_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/sugar_control_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".userAccount.InitialActivity"
+            android:launchMode="singleTop"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".userAccount.SignupActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_sign_up" />
+
+        <activity android:name=".userAccount.AfterSignUpFragment"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".userAccount.HelpFragment"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".userAccount.LoginActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".userAccount.ResetPasswordActivity"
+            android:label="@string/title_activity_reset_password"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Main.MainActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:launchMode = "singleInstance"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Emergency.MainEmergency"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Record.PreviousRecords"
+            android:label="@string/title_statistics" />
+        <activity android:name=".History.ViewRecords"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".History.HistoryActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".History.SingleRecord"
+            android:label="@string/title_previous_records" />
+        <activity android:name=".Statistics.GraphActivity" />
+        <activity android:name=".HypoFragments.HypoActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Record.RecordActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Record.RecordHba1c"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Bluetooth.BluetoothBgl"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".userAccount.Help"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Tour.TourActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Bluetooth.Bluetooth"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".Treatment.MedicationChooseType"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Treatment.FillInInsulinTreatment"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Treatment.FillMedicationTreatment"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".userAccount.ChooseTheme"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Statistics.StatisticsMain"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Advice.AdviceActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Statistics.SendReport"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main.Preferences"/>
+
+        <receiver android:name=".Emergency.EmergencyAppWidgetProvider">
+          <intent-filter>
+              <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+          </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/emergency_appwidget_info"/>
+        </receiver>
+
+        <!--<activity android:name=".Record.RecordUsingNFC"-->
+            <!--android:configChanges="orientation"-->
+            <!--android:screenOrientation="portrait">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.nfc.action.NDEF_DISCOVERED"/>-->
+                <!--<category android:name="android.intent.category.DEFAULT"/>-->
+                <!--<data android:mimeType="text/plain"/>-->
+            <!--</intent-filter>-->
+
+        <!--</activity>-->
+
+        <receiver android:name=".Reminder.NotificationReceiver"/>
+
+        <!--<provider-->
+            <!--android:name=".data.AlarmReminderProvider"-->
+            <!--android:authorities="com.delaroystudios.alarmreminder"-->
+            <!--android:exported="false" />-->
+
+        <!--<service-->
+            <!--android:name=".Reminder.ReminderAlarmService"-->
+            <!--android:exported="false" />-->
+    </application>
+
+
+</manifest>

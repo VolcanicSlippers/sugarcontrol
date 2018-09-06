@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btn_save_medicine"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Treatment.FillMedicationTreatment">
+
+    <include
+        layout="@layout/toolbar_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="95dp"
+            android:text="@string/time"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_time_medication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|right"
+            android:background="@color/cardview_light_background"
+            android:text="@string/select_time"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_date_medication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@color/cardview_light_background"
+            android:text="@string/select_date"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_medication" />
+
+    <ListView
+        android:id="@+id/medicine_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="454dp"></ListView>
+
+    <Button
+        android:paddingHorizontal="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:textAllCaps="false"
+        android:id="@+id/btn_medicine_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Medicine" />
+
+</LinearLayout>

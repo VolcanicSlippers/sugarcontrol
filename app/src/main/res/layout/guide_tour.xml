@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/toolbar_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="There are two ways to access bits in Sugar Control."
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You can:"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You Click on the burger icon in the top left corner. Alternatively, you can swipe left to access this when on the homescreen. "
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/screenshot"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Each option is quite self explanatory. Talk to Insulina allows you to converse with Insulina, Emergency allows you to access the emergency call option, bluetooth Receiver is reserved for transferring bluetooth data. You can set a reminder by clicking on the reminder button, and come right back here by clicking on the help button!"/>
+
+  <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You can also click on the yellow plus icon. This will bring the following icons up:"
+        />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="3">
+        <ImageView
+            android:id="@+id/btn_record_medicine"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/btn_record"
+            android:textAllCaps="false"
+            android:src="@drawable/pillxxxhdpi"
+            android:layout_toStartOf="@+id/insulina_main_page"
+            android:text="@string/record_medicine" />
+        <ImageView
+            android:id="@+id/btn_record_medicine2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/btn_record"
+            android:textAllCaps="false"
+            android:src="@drawable/flaskhdpi"
+            android:layout_toStartOf="@+id/insulina_main_page"
+            android:text="@string/record_medicine" />
+        <ImageView
+            android:id="@+id/btn_record_medicine3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/btn_record"
+            android:textAllCaps="false"
+            android:src="@drawable/bloodhdpi"
+            android:layout_toStartOf="@+id/insulina_main_page"
+            android:text="@string/record_medicine" />
+
+    </GridLayout>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/medicine_tour"
+
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:src="@drawable/insulina_vers_5xxxhdpi"
+        android:layout_height="250dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is Insulina. Speak to her by clicking on her on the home screen!"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="That's all the main functionalities. Return to the home screen?"/>
+
+    <Button
+        android:id="@+id/btn_return_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="return"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

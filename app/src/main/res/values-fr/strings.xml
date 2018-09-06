@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //general strings
+    <string name="app_name">Contrôle du\nsucre</string>
+
+    //AppBar
+    <string name="action_save">ENREGISTRER</string>
+    <string name="back">back</string>
+
+    //initial activity
+    <string name="title_sugar_control">Contrôle du\nsucre</string>
+    <string name="join_now">Adhérer</string>
+    <string name="btn_login">se connecter</string>
+    <string name="have_an_account_already">Vous avez déjà un compte?</string>
+
+    //log in strings
+    <string name="new_to_sugar_control">Nouveau sur le contrôle du sucre?</string>
+    <string name="btn_forgot_password">Mot de passe oublié?</string>
+
+    //registration
+    <string name="diabetes_type">Type de diabète:</string>
+    <string name="bgl_range_registration_text">Plage cible pour votre glycémie:  (in mmol/L)</string>
+
+    //AfterSignUp
+    <string name="about_alpha_test">Bienvenue à Sugar Control!</string>
+    <string name="btn_to_tips_from_after_sign">Get some tips on \nHow to use Sugar Control -></string>
+
+    <string name="insulina_normal">Votre dernière lecture était</string>
+    <string name="insulina_normal_2"></string>
+    <string name="insulina_high">Votre lecture précédente était assez élevée.</string>
+    <string name="insulina_low">Votre lecture précédente était assez élevée.</string>
+
+    //home
+    <string name="record_hba1c"> Record\nHbA1c</string>
+    <string name="record_bgl">Niveau de glucose</string>
+    <string name="record_medicine">Médecine\nRecord</string>
+    <string name="txt_history">Histoire</string>
+    <string name="txt_stats">Statistiques</string>
+
+    //options
+    <string name="change_theme">Changer votre thème</string>
+    <string name="change_language">Changer de langue</string>
+    <string name="vertical_ellipsis">&#8942;</string>
+
+    //record
+    <string name="select_time">Sélectionnez l\'heure</string>
+    <string name="select_date">Sélectionner une date</string>
+    <string name="more">Plus -></string>
+    <string name="what_is_your_blood_glucose_level">Quel est votre taux de glucose?</string>
+    <string name="notes_title">Notes (facultatif):</string>
+    <string name="double_tap_to_save">Double tap to save!</string>
+    <string name="record_using_nfc">Appuyez deux fois pour enregistrer</string>
+
+    //history
+
+    //titles
+    <string name="title_activity_main">Accueil</string>
+    <string name="title_activity_home">Accueil</string>
+    <string name="title_activity_profile">Profil</string>
+    <string name="title_activity_login">Se connecter</string>
+    <string name="title_activity_sign_up">S\'inscrire</string>
+    <string name="title_activity_record">Enregistrer une entrée</string>
+    <string name="title_previous_records">Entrées précédentes</string>
+    <string name="title_statistics">Statistiques</string>
+
+
+    <string name="first_name">Prénom</string>
+    <string name="last_name">Nom de famille</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Mot de passe</string>
+    <string name="weight"></string>
+
+    //main page
+
+
+    //navi drawer
+    <string name="navigation_drawer_open">Tiroir de navigation ouvert</string>
+    <string name="navigation_drawer_close">Fermer le tiroir de navigation</string>
+
+    //stats page
+    <string name="main_screen_text_1">Lecture moyenne d\'aujourd\'hui:</string>
+    <string name="number_of_entries">Nombre moyen d\'entrées:</string>
+    <string name="main_screen_report_title">Aujourd\'hui:</string>
+    <string name="entries_in_range">Entrées dans la gamme:</string>
+    <string name="entries_below_range">Entrées sous la gamme</string>
+    <string name="entries_above_range">Entrées supérieures à la fourchette</string>
+    <string name="avg_blood_glucose_level">BGL moyen aujourd\'hui:</string>
+    <string name="weekly_stats">Cette semaine:</string>
+    <string name="weekly_bgl_stats">Moyenne de\n glycémie hebdomadaire</string>
+    <string name="title_monthly_avg">Ce mois-ci:</string>
+    <string name="monthly_blg_stat">Moyenne mensuelle\n de la glycémie</string>
+
+    <string name="btn_link_to_register">Pas un membre? Appuyez ici pour vous inscrire!</string>
+    <string name="btn_link_to_login">Déjà enregistré. Connectez-moi!</string>
+    <string name="title_activity_reset_password">réinitialiser le mot de passe</string>
+    <string name="prompt_password">Mot de passe rapide?</string>
+    <string name="btn_reset_password">Réinitialiser le mot de passe</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="hint_new_email">Nouveau courriel</string>
+    <string name="btn_change">Changement</string>
+    <string name="btn_send">Envoyer</string>
+    <string name="btn_remove">Retirer</string>
+    <string name="btn_back_to_home_screen">Comptes de liaison</string>
+    <string name="btn_sign_out">Déconnexion</string>
+    <string name="btnProfile">profil</string>
+    <string name="lbl_forgot_password">Mot de passe oublié?</string>
+    <string name="forgot_password_msg">Nous avons juste besoin de votre adresse e-mail enregistrée pour vous envoyer des instructions de réinitialisation du mot de passe.</string>
+    <string name="options">Les options</string>
+    <string name="add_post">Ajouter un message</string>
+
+
+    //reminder
+    <string name="add_reminder">Rappel</string>
+    <string name="details">Détails</string>
+    <string name="date">Rendez-vous amoureux</string>
+    <string name="time">Temps</string>
+    <string name="repeat">Répéter</string>
+    <string name="reminder_set_txt_view">Définir le rappel</string>
+    <string name="reminder_insulina_text">Aucun rappel n\'a encore été défini. Je veux que je vous rappelle de prendre un enregistrement?</string>
+    <string name="action_discard_reminder">Discard Reminder</string>
+    <string name="cancel_reminder">cancel the\nReminder</string>
+    <string name="set_the_reminder">Définir le \nrappel</string>
+    <string name="discard">Jeter</string>
+    <string name="delete_dialog_msg">Supprimer ce rappel?</string>
+    <string name="delete">Effacer</string>
+    <string name="cancel">Annuler</string>
+    <string name="reminder_title">Rappel d\'alarme</string>
+    <string name="hypo_emergency_btn">Appelez\nle contact\nd\'urgence</string>
+    <string name="hypo_advice">Hypo Conseils</string>
+    <string name="set_emergency_contact">Définir le contact d\'urgence</string>
+    <string name="widget_title">HYPO\nEMERGENCY</string>
+
+    //Insulina
+    <string name="what_s_on_your_mind">Entrez votre requête</string>
+    <string name="translation_label">Traduction:</string>
+    <string name="translate">Traduire</string>
+    <string name="input_hint">entrez du texte</string>
+    <string name="target_language">Langue cible</string>
+    <string name="spanish">Espanol</string>
+    <string name="french">français</string>
+    <string name="italian">italien</string>
+    <string name="microphone">Microphone</string>
+    <string name="play">Jouer</string>
+
+
+    <string name="Glucose_level">Niveau de glucose</string>
+    <string name="HbA1c">HbA1c</string>
+    <string name="Medicine">médicament</string>
+
+    //statistics page
+    <string name="the_level_of_glucose">Le niveau\nde glucose, mmol/L</string>
+    <string name="normal_levels">Niveaux normaux</string>
+    <string name="normal_range_num">4.4 - 6.1</string>
+    <string name="average_7_days">Niveau de glycémie moyen cette semaine</string>
+    <string name="hint_number">Nombre</string>
+    <string name="avg_this_month">Niveau de glycémie moyen ce mois-ci</string>
+    <string name="avg_monthly_num">4.4 - 6.1</string>
+    <string name="glucose_max">Entrée maximale</string>
+    <string name="glucose_min">Entrée minimum</string>
+    <string name="standard_deviation">Déviation standard</string>
+
+
+    //record hba1c
+    <string name="what_is_your_hba">Quelle est votre lecture de hbA1c?</string>
+    <string name="hint_reading">En train de lire</string>
+    <string name="notes">Remarques:</string>
+    <string name="enter_hba_details">Entrez ici les détails du résultat HbA1c</string>
+
+    //record activity
+    <string name="what_time">Quelle heure?</string>
+
+
+    //nav_header
+    <string name="welcome">Bienvenue!</string>
+
+    //medication
+    <string name="starting_medication">Le commence!</string>
+    <string name="add_medication">ajouter des médicaments</string>
+    <string name="select_medication">Please select your medication:</string>
+    <string name="what_type_meds">Quel type de traitement prenez-vous?</string>
+    <string name="next">Prochain</string>
+    <string name="how_much_insulin">Combien d\'insuline avez-vous pris?</string>
+    <string name="units">Unités</string>
+    <string name="what_type">Quel genre?</string>
+    <string name="brand">Marque?</string>
+
+    //navi drawer
+    <string name="home">Accueil</string>
+    <string name="insulina_talk">Parlez à Insulina</string>
+    <string name="emergency">Urgence</string>
+    <string name="receive_recordings">Recevoir des enregistrements</string>
+    <string name="reminders">Rappels</string>
+    <string name="support">Soutien</string>
+    <string name="advice">Conseil</string>
+    <string name="help">Aidez-moi</string>
+    <string name="Settings">Paramètres</string>
+    <string name="log_out">Connectez - Out</string>
+    <string name="about_sugar_control">À propos de Sugar Control</string>
+
+
+</resources>

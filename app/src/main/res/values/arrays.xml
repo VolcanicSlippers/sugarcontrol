@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Type of Diabetes -->
+    <string-array name="diabetes_type">
+        <item>Prediabetes</item>
+        <item>Type 1</item>
+        <item>Type 2</item>
+        <item>Gestational</item>
+        <item>LADA</item>
+    </string-array>
+    <string-array name="time">time</string-array>
+    <array name="restext">
+        <item>"Actos"</item>
+        <item>"Amaryl"</item>
+        <item>"Avandamet"</item>
+        <item>"Avandaryl"</item>
+        <item>"Avandia"</item>
+        <item>"Byetta"</item>
+        <item>"Cymbalta"</item>
+        <item>"Gabapentin"</item>
+        <item>"Gliclazide"</item>
+        <item>"Glimepiride"</item>
+        <item>"Glucagon"</item>
+        <item>"Glucophage"</item>
+        <item>Glucotrol</item>
+        <item>Glucovance</item>
+        <item>Glyburide</item>
+        <item>Glyset</item>
+        <item>Invokana</item>
+        <item>Janumet</item>
+        <item>Januvia</item>
+        <item>Jadiance</item>
+        <item>Jentadueto</item>
+        <item>Lyrica</item>
+        <item>Metaglip</item>
+        <item>Metaformin</item>
+        <item>Orinase</item>
+        <item>Prandin</item>
+        <item>Precose</item>
+        <item>Starlix</item>
+        <item>Stigaliptin</item>
+        <item>Tolinase</item>
+        <item>Tradjenta</item>
+        <item>Trulicity</item>
+        <item>Victoza</item>
+        <item>Xenical</item>
+        <item>Zicron</item>
+        <item>other</item>
+
+    </array>
+</resources>

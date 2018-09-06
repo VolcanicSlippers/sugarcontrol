@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout_activity_graph"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HypoFragments.HypoActivity">
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp"
+        android:id="@+id/textHypo_Tab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Press the following contacts you would like to inform of your hypo."/>
+
+
+</LinearLayout>

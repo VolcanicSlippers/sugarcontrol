@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:src="@drawable/scrn5"
+        />
+    <TextView
+        android:padding="10dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lastly, don't forget to check out some of the other features."
+        />
+    <Button
+        android:id="@+id/btn_tour_5"
+        android:layout_gravity="center"
+        android:background="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:textAllCaps="false"
+        android:layout_height="wrap_content"
+        android:text="To Home"/>
+
+</LinearLayout>

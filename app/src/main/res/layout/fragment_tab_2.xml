@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="@string/statistics_screen_title"
+        />
+    <TextView
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@color/colorAccent"
+        android:id="@+id/txt_main_screen_todays_report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dip"
+        android:text="@string/main_screen_report_title"
+        />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/insulina_main_page"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp"
+
+        android:columnCount="2"
+        android:rowCount="13">
+
+
+        <TextView
+            android:paddingBottom="10dp"
+            android:id="@+id/txt_main_screen_number_of_entries_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:text="@string/number_of_entries"
+            />
+        <TextView
+            android:id="@+id/data_txt_main_screen_number_of_entries_today"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:hint="0"
+            />
+
+        <TextView
+            android:paddingBottom="10dp"
+
+            android:id="@+id/txt_entries_in_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:text="@string/entries_in_range"
+            />
+        <TextView
+
+            android:id="@+id/data_txt_entries_in_range"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:hint="0"
+            />
+        <TextView
+            android:paddingBottom="10dp"
+
+            android:id="@+id/txt_main_screen_entries_below_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:text="@string/entries_below_range"
+            />
+        <TextView
+            android:id="@+id/data_txt_main_screen_entries_below_range"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:hint="0"
+            />
+        <TextView
+            android:paddingBottom="10dp"
+
+            android:id="@+id/txt_main_screen_entries_above_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:text="@string/entries_above_range"
+            />
+        <TextView
+            android:id="@+id/data_txt_main_screen_entries_above_range"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:hint="0"
+            />
+        <TextView
+            android:paddingBottom="10dp"
+
+            android:id="@+id/txt_glucose_avg_daily"
+            android:layout_width="wrap_content"
+            android:layout_row="5"
+            android:layout_column="0"
+
+            android:layout_height="wrap_content"
+            android:text="@string/avg_blood_glucose_level"
+            />
+        <TextView
+            android:id="@+id/data_txt_avg_today_bgl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="5"
+            android:layout_gravity="right"
+            android:layout_column="1"
+            android:hint="-"
+            />
+        <TextView
+
+            android:paddingBottom="10dp"
+
+            android:id="@+id/txt_glucose_max"
+            android:layout_width="wrap_content"
+            android:layout_row="6"
+            android:layout_column="0"
+
+            android:layout_height="wrap_content"
+            android:text="@string/glucose_max"
+            />
+        <TextView
+            android:id="@+id/data_txt_glucose_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="6"
+            android:layout_gravity="right"
+            android:layout_column="1"
+            android:hint="-"
+            />
+        <TextView
+
+            android:paddingBottom="10dp"
+
+            android:id="@+id/txt_glucose_min"
+            android:layout_width="wrap_content"
+            android:layout_row="7"
+            android:layout_column="0"
+
+            android:layout_height="wrap_content"
+            android:text="@string/glucose_min"
+            />
+        <TextView
+            android:id="@+id/data_txt_glucose_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="7"
+            android:layout_gravity="right"
+            android:layout_column="1"
+            android:hint="-"
+            />
+        <TextView
+
+            android:paddingBottom="10dp"
+
+            android:id="@+id/txt_standard_deviation"
+            android:layout_width="wrap_content"
+            android:layout_row="8"
+            android:layout_column="0"
+
+            android:layout_height="wrap_content"
+            android:text="@string/standard_deviation"
+            />
+        <TextView
+            android:id="@+id/data_standard_deviation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="8"
+            android:layout_gravity="right"
+            android:layout_column="1"
+            android:hint="-"
+            />
+
+        <!--<TextView-->
+        <!--android:layout_marginTop="10dp"-->
+
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/weekly_stats"-->
+        <!--android:layout_row="9"-->
+        <!--android:layout_column="0"-->
+        <!--android:textSize="20sp"-->
+        <!--android:background="@color/grey"-->
+        <!--/>-->
+        <!--<TextView-->
+        <!--android:id="@+id/stats_avg_7days"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_row="10"-->
+        <!--android:layout_column="0"-->
+        <!--android:text="@string/weekly_bgl_stats"-->
+        <!--/>-->
+        <!--<TextView-->
+        <!--android:id="@+id/data_weekly_bgl_stat"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_row="10"-->
+        <!--android:layout_column="1"-->
+        <!--android:layout_gravity="right"-->
+        <!--android:hint="-"-->
+        <!--/>-->
+        <!--<TextView-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_row="11"-->
+        <!--android:layout_column="0"-->
+        <!--android:text="@string/title_monthly_avg"-->
+        <!--android:textSize="20sp"-->
+        <!--android:background="@color/grey"-->
+        <!--/>-->
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_row="12"-->
+        <!--android:layout_column="0"-->
+        <!--android:text="@string/monthly_blg_stat"-->
+        <!--/>-->
+        <!--<TextView-->
+        <!--android:id="@+id/data_monthly_bgl_stat"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="right"-->
+        <!--android:layout_row="12"-->
+        <!--android:layout_column="1"-->
+        <!--android:hint="-"-->
+        <!--/>-->
+    </GridLayout>
+
+
+    <Button
+        android:layout_height="50dp"
+
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        />
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/data_weekly_bgl_stat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0.0"
+            android:layout_marginRight="20dp"
+            android:textSize="50sp"/>
+        <Button
+            android:layout_height="match_parent"
+            android:layout_width="25dp"
+            android:background="@color/colorAccent"
+            />
+        <TextView
+            android:id="@+id/data_monthly_bgl_stat"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0.0"
+            android:textSize="50sp"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="165dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            android:text="@string/weekly_bgl_stats"
+            android:textColor="@color/primary_text"
+            android:textSize="20sp" />
+
+        <TextView
+            android:shadowColor="@color/primary_text"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="@string/monthly_blg_stat"
+            android:textColor="@color/primary_text"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/normal_stats"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Normal Levels"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/text_normal_sugar_levels"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="4.4 - 6.1"-->
+            <!--/>-->
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="Date"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_toRightOf="@id/text_normal_sugar_levels"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="50dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_centerInParent="true"/>&ndash;&gt;-->
+
+    <!--</RelativeLayout>-->
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/txt_stats_avg_7days"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="-"-->
+            <!--/>-->
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/txt_stats_avg_7days_date"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="Date"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_toRightOf="@id/txt_stats_avg_7days"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="50dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_centerInParent="true"/>&ndash;&gt;-->
+
+    <!--</RelativeLayout>-->
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/txt_stats_avg_30days"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Average This Month"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/txt_stats_avg_30days_number"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="-"-->
+            <!--/>-->
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/txt_stats_avg_30days_date"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="Date"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_toRightOf="@id/txt_stats_avg_30days_number"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="50dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_centerInParent="true"/>&ndash;&gt;-->
+    <!--</RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_marginTop="40dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/grey"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/title_hba1c_stats"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="HbA1c level"-->
+            <!--/>-->
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:text="Date"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_toRightOf="@id/title_glucose_stats"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginLeft="50dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_centerInParent="true"            />&ndash;&gt;-->
+
+    <!--</RelativeLayout>-->
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/normal_stats_hba1c"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Normal Levels"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/text_normal_hba1c"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="7.2 - 10.0"-->
+            <!--/>-->
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:text="Date"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_toRightOf="@id/text_normal_sugar_levels"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginLeft="50dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_centerInParent="true"/>&ndash;&gt;-->
+
+    <!--</RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/avg_stats_hba1c"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Overall Average"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/text_avg_hba1c_user"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="-"-->
+            <!--/>-->
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:text="Date"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_toRightOf="@id/text_normal_sugar_levels"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginLeft="50dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_centerInParent="true"/>&ndash;&gt;-->
+
+    <!--</RelativeLayout>-->
+    <Button
+        android:id="@+id/btn_export_report"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@color/colorAccent"
+        android:text="Generate Report"
+        />
+    <!--<Button-->
+        <!--android:id="@+id/load_report"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textSize="20sp"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:text="Load Report"-->
+        <!--/>-->
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/tv"-->
+        <!--android:text=""/>-->
+
+</LinearLayout>

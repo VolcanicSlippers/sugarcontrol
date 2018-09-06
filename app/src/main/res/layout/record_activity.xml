@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.karimtimer.sugarcontrol.Record.RecordActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include
+            layout="@layout/toolbar_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:text="@string/what_is_your_blood_glucose_level"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit_sugar_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLength="3"
+                android:textSize="40sp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/text_mmol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="mmol/L"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <!--<ImageView-->
+                <!--android:id="@+id/exclamation_mark_sug_level"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:visibility="invisible"-->
+                <!--app:srcCompat="@drawable/ic_priority_high_black_24dp" />-->
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/remark_on_blood_glucose_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/what_time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="95dp"
+                android:text="@string/what_time"
+                android:textSize="20sp"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:visibility="invisible"
+
+                android:id="@+id/btn_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|right"
+                android:background="@color/cardview_light_background"
+                android:text="@string/select_time"
+                android:textAllCaps="false" />
+
+            <Button
+                android:visibility="invisible"
+
+                android:id="@+id/btn_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:background="@color/cardview_light_background"
+                android:text="@string/select_date"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/text_carbs"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginRight="135dp"-->
+                <!--android:text="CARBS"-->
+                <!--android:textSize="20sp" />-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/edit_carbs"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="-"-->
+                <!--android:inputType="numberDecimal"-->
+                <!--android:maxLength="3" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/text_grams"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="g"-->
+                <!--android:textSize="20sp" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/text_insulin_food"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginRight="53dp"-->
+                <!--android:text="INSULIN (FOOD)"-->
+                <!--android:textSize="20sp" />-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/edit_insulin_food"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="-"-->
+                <!--android:inputType="numberDecimal"-->
+                <!--android:maxLength="3" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/text_Units_food"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Units"-->
+                <!--android:textSize="20sp" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/text_insulin_CORR."-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginRight="47dp"-->
+                <!--android:text="INSULIN (CORR.)"-->
+                <!--android:textSize="20sp" />-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/edit_insulin_CORR."-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="-"-->
+                <!--android:inputType="numberDecimal"-->
+                <!--android:maxLength="3" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/text_Units_CORR."-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Units"-->
+                <!--android:textSize="20sp" />-->
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:visibility="invisible"
+
+                android:id="@+id/text_notes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="110dp"
+                android:text="@string/notes_title"
+                android:textSize="20sp" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbarAlwaysDrawHorizontalTrack="true">
+
+                <EditText
+                    android:visibility="invisible"
+
+                    android:id="@+id/edit_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/btn_time"
+                    android:layout_toRightOf="@+id/text_carbs"
+                    android:inputType="textShortMessage" />
+            </ScrollView>
+
+        </LinearLayout>
+
+        <Button
+            android:visibility="invisible"
+            android:id="@+id/btn_save_entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/double_tap_to_save" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>

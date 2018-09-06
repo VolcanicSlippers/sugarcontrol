@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+    android:background="@color/white"
+    android:rowCount="9"
+    android:layout_column="0"
+    tools:context="com.karimtimer.sugarcontrol.userAccount.LoginActivity">
+
+        <TextView
+            android:textColor="@color/primary_text"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="@string/app_name"
+            android:textSize="45sp" />
+
+
+        <!-- Login Button -->
+
+        <Button
+            android:layout_row="3"
+            android:layout_column="0"
+            android:id="@+id/btn_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:background="@color/colorPrimary"
+            android:text="@string/btn_login"
+            android:textColor="@android:color/black" />
+
+        <!-- Link to Login Screen -->
+
+        <Button
+            android:layout_row="4"
+            android:layout_column="0"
+            android:id="@+id/btn_to_the_forgot_password_screen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent"
+            android:text="@string/btn_forgot_password"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="15dp" />
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_row="5"
+        android:layout_column="0"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/new_to_sugar_control"/>
+
+    <Button
+        android:layout_row="6"
+        android:layout_column="0"
+        android:id="@+id/btn_signup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:text="@string/join_now"
+        android:textColor="@android:color/black" />
+
+
+    <ProgressBar
+        android:layout_row="7"
+        android:layout_column="0"
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
+</GridLayout>

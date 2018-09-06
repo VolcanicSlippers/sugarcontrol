@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include
+        android:id="@+id/toolbar_bluetooth"
+        layout="@layout/toolbar_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
+    <TextView
+        android:id="@+id/bluetooth_status"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="status" />
+    <ImageView
+
+        android:layout_width="268dp"
+        android:layout_height="345dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/bluetooth_devicexxxhdpi" />
+
+    <Button
+        android:id="@+id/bluetooth_btn_listen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bluetooth_status"
+        android:layout_toStartOf="@+id/bluetooth_status"
+        android:text="Connect to phone"
+        android:textAllCaps="false" />
+
+    <!--<LinearLayout-->
+        <!--android:layout_below="@+id/toolbar_bluetooth"-->
+        <!--android:id="@+id/layout_bluetooth_top"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+    <Button
+        android:id="@+id/btn_list_devices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bluetooth_devices_list"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-174dp"
+        android:text="List Devices"
+        android:textAllCaps="false" />
+
+
+
+    <!--</LinearLayout>-->
+
+    <ListView
+        android:id="@+id/bluetooth_devices_list"
+        android:layout_width="136dp"
+        android:layout_height="318dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="174dp" />
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/bluetooth_message_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:text="Message"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/bluetooth_bgl_text_message"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="58dp"
+        android:layout_marginTop="230dp"
+        android:hint="Enter your bgl " />
+
+    <Button
+
+        android:id="@+id/btn_time_bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bluetooth_bgl_text_message"
+        android:layout_alignTop="@+id/btn_date_bluetooth"
+        android:layout_marginEnd="-28dp"
+        android:background="@color/cardview_light_background"
+        android:text="@string/select_time"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bluetooth_message_send"
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="244dp"
+        android:layout_marginEnd="89dp"
+        android:background="@drawable/transparent"
+        android:text="Send"
+        android:textAllCaps="false"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_date_bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bluetooth_status"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="96dp"
+        android:background="@color/cardview_light_background"
+        android:text="@string/select_date"
+        android:textAllCaps="false" />
+
+</RelativeLayout>

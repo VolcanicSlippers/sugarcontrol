@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <include
+        android:id="@+id/toolbar_bluetooth"
+        layout="@layout/toolbar_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_below="@+id/toolbar_bluetooth"
+        android:id="@+id/layout_bluetooth_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btON"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btON"/>
+        <Button
+            android:id="@+id/btnOFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btOFF"/>
+        <Button
+            android:id="@+id/btnShowBluetoothDevices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="status"/>
+
+
+    </LinearLayout>
+    <ListView
+        android:layout_below="@+id/layout_bluetooth_top"
+        android:id="@+id/bluetooth_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ListView>
+
+
+</RelativeLayout>

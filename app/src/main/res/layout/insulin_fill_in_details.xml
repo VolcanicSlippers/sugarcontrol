@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/toolbar_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"
+            android:text="@string/how_much_insulin" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edit_text_insulin_type"
+                android:inputType="number"
+                android:maxLength="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:hint="-" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/units"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/what_type" />
+
+        <Spinner
+            android:id="@+id/spinner_insulin_type"
+            android:layout_gravity="center"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/brand" />
+
+        <Spinner
+            android:layout_gravity="center"
+            android:id="@+id/spinner_insulin_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="95dp"
+                android:text="@string/time"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_time_insulin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|right"
+                android:background="@color/cardview_light_background"
+                android:text="@string/select_time"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_date_insulin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:background="@color/cardview_light_background"
+                android:text="@string/select_date"
+                android:textAllCaps="false" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:textAllCaps="false"
+        android:background="@color/colorPrimaryDark"
+        android:layout_gravity="center"
+        android:id="@+id/btn_save_entry_insulin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Entry" />
+
+</LinearLayout>

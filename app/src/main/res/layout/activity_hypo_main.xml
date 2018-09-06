@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/gradient">
+    <!-- The ActionBar displayed at the top -->
+    <include
+        layout="@layout/toolbar_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <!--<Button-->
+        <!--android:layout_above="@+id/btn_call_contact"-->
+        <!--android:layout_marginBottom="16dp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:id="@+id/btn_hypo_advice"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:text="@string/hypo_advice" />-->
+
+
+
+    <Button
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:id="@+id/btn_call_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="@string/hypo_emergency_btn"
+        android:layout_centerInParent="true"
+        android:background="@drawable/circle_shape"
+        android:textColor="#fff" />
+
+    <LinearLayout
+        android:layout_below="@+id/btn_call_contact"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:id="@+id/btn_set_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="@string/set_emergency_contact" />
+
+        <LinearLayout
+            android:id="@+id/layout_emergency_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/txt_set_contact"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="enter Emergency contact here" />
+
+            <Button
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:id="@+id/btn_add_emergency_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
