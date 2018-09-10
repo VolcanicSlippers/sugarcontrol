@@ -19,6 +19,9 @@ import com.karimtimer.sugarcontrol.R;
 import java.util.ArrayList;
 import java.util.Map;
 
+/**
+ * @author Abdikariim Timer
+ */
 public class HypoFragment2 extends Fragment {
     private static final String TAG = "Tab1Fragment";
 

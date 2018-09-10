@@ -21,6 +21,9 @@ import com.karimtimer.sugarcontrol.R;
 import java.util.ArrayList;
 import java.util.Set;
 
+/**
+ * @author Abdikariim Timer
+ */
 public class MainBluetooth extends AppCompatActivity {
 
     private Toolbar toolbar;

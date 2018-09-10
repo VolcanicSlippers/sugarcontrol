@@ -23,8 +23,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.karimtimer.sugarcontrol.Main.MainActivity;
 import com.karimtimer.sugarcontrol.R;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
+/**
+ * @author Abdikariim Timer
+ * This class contains the code needed for the user to record the HbA1c values
+ */
 public class RecordHba1c extends AppCompatActivity implements
         View.OnClickListener {
     private static final String TAG = "check";
@@ -228,5 +233,22 @@ public class RecordHba1c extends AppCompatActivity implements
         }
     }
 
+    /**
+     * Method used to calculate the overall average.
+     * @param al
+     * @return
+     */
+    public double overallAvg(ArrayList<Double> al) {
+        if (al.size() == 0) {
+            return 0;
+        } else {
+            double sum = 0;
+            for (int i = 0; i < al.size(); i++) {
+                double current = al.get(i);
+                sum += current;
+            }
+            return sum / al.size();
+        }
+    }
 
 }

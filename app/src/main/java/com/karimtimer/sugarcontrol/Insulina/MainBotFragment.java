@@ -487,17 +487,17 @@ public class MainBotFragment extends android.support.v4.app.Fragment {
                             }
 
                         }
-                        //TODO: redirect for history
+                        //TODO: redirect for history, done.
                         if (obj.optString("takeTo").equals("history")) {
                             startActivity(new Intent(getActivity(), HistoryActivity.class));
                             getActivity().finish();
                         }
-                        //TODO: redirect for graph
+                        //TODO: redirect for graph, done.
                         if (obj.optString("takeTo").equals("stats")) {
                             startActivity(new Intent(getActivity(), GraphActivity.class));
                             getActivity().finish();
                         }
-                        //TODO: redirect for medicine
+                        //TODO: redirect for medicine, done.
                         if (obj.optString("takeTo").equals("medicine")) {
                             startActivity(new Intent(getActivity(), MedicationChooseType.class));
                             getActivity().finish();

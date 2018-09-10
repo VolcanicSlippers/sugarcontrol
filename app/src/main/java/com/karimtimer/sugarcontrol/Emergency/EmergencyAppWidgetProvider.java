@@ -10,6 +10,9 @@ import android.widget.RemoteViews;
 import com.karimtimer.sugarcontrol.Emergency.MainEmergency;
 import com.karimtimer.sugarcontrol.R;
 
+/**
+ * @author Abdikariim Timer
+ */
 public class EmergencyAppWidgetProvider extends AppWidgetProvider {
 
     @Override

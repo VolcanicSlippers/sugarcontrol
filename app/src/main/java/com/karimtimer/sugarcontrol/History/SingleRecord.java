@@ -8,6 +8,9 @@ import android.widget.ListView;
 
 import com.karimtimer.sugarcontrol.R;
 
+/**
+ * @author Abdikariim Timer
+ */
 public class SingleRecord extends AppCompatActivity{
 
 

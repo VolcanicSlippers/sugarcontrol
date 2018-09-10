@@ -28,28 +28,28 @@ public class BluetoothTest {
 
     //Testing the Bluetooth setter for the Date
     @Test
-    public void statsTest1() {
+    public void bluetoothTest1() {
         String expected = "12/08/2018";
         String actual = bluetooth.getDate();
         assertEquals(expected, actual);
     }
     //Testing the Bluetooth setter for its bgl reading
     @Test
-    public void statsTest2() {
+    public void bluetoothTest2() {
         String expected = "5.0";
         String actual = bluetooth.getSrgLvl();
         assertEquals(expected, actual);
     }
     //Testing the Bluetooth setter for its bgl reading
     @Test
-    public void statsTest3() {
+    public void bluetoothTest3() {
         String expected = "5.0";
         String actual = bluetoothBgl.getSgrLvl();
         assertEquals(expected, actual);
     }
     //Testing the Bluetooth to see if a non numeric value will be valid or not. Test should not work.
     @Test
-    public void statsTest4() {
+    public void bluetoothTest4() {
         String expected = "5.0";
         String actual = bluetoothBglIncorrectValue.getSgrLvl();
         assertNotSame(expected,actual);

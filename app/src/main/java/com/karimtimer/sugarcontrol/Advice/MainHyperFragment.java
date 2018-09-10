@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * @author Abdikariim Timer
+ */
 public class MainHyperFragment extends Fragment {
     private static final String TAG = "Main Hyper advice fragment";
 

@@ -35,6 +35,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+
+/**
+ * @author Abdikariim Timer
+ * This class contains the code used for the application to store the users bgl result  into the Firebase database
+ */
 public class RecordActivity extends AppCompatActivity implements
         View.OnClickListener {
     private static final String TAG = "Record";
@@ -107,18 +112,6 @@ public class RecordActivity extends AppCompatActivity implements
 
 
        String sugarLevelText = txtSugarLevel.getText().toString();
-//       if(!sugarLevelText.equals("")) {
-//           double sugLevel = Double.parseDouble(sugarLevelText);
-//           if (sugLevel > 10) {
-//               Log.e(TAG, "WE'RE INNNN");
-//               exclamationMark.setVisibility(View.VISIBLE);
-//               exclamationMark.setImageResource(R.drawable.ic_priority_high_black_24dp);
-//               exclamationMark.setColorFilter(Color.RED);
-//
-//           }
-//       }
-
-
 
         inRangeAL = new ArrayList<Double>();
         aboveRangeAL = new ArrayList<Double>();
@@ -190,7 +183,6 @@ public class RecordActivity extends AppCompatActivity implements
                     int aboveRangeSize = getAboveRangeAL().size();
                     double todaysAvg = overallAvg(avgToday);
 
-                    //if(checkTimeFormat(date) == true) {
                     if (!time.equals("Select Time")) {
                         if (!date.equals("Select Date")) {
                             if (!sugarLevel.equals("")) {
@@ -383,115 +375,17 @@ public class RecordActivity extends AppCompatActivity implements
 
         finish();
     }
-//
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//
-//        // Setting my title bar
-//        (RecordActivity.this)
-//                .setActionBarTitle("Record an Entry");
-//
-//
-//        if (getView() == null) {
-//            return;
-//        }
-//
-//        getView().setFocusableInTouchMode(true);
-//        getView().requestFocus();
-//        getView().setOnKeyListener(new View.OnKeyListener() {
-//            @Override
-//            public boolean onKey(View v, int keyCode, KeyEvent event) {
-//
-//                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-//                    startActivity(new Intent(getActivity(), MainActivity.class));
-//                    getActivity().finish();
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
-//    }
-//
-//    private void toastMessage(String message) {
-//        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
-//    }
+
 
     private TextWatcher filterTextWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//            if(!charSequence.toString().isEmpty()) {
-//                double sugarLevelBeingChecked = Double.parseDouble(charSequence.toString());
-//                whatTimeTxt.setVisibility(View.VISIBLE);
-//                //txtDate.setVisibility(View.VISIBLE);
-//                btnTimePicker.setVisibility(View.VISIBLE);
-//                btnDatePicker.setVisibility(View.VISIBLE);
-//                notesTitle.setVisibility(View.VISIBLE);
-//                txtNotes.setVisibility(View.VISIBLE);
-//                btnSaveEntry.setVisibility(View.VISIBLE);
-//                if (sugarLevelBeingChecked < 4) {
-//                    // exclamationMark.setVisibility(View.VISIBLE);
-//                    bglRemark.setText("level is below normal range");
-//                    bglRemark.setTextColor(getResources().getColor(R.color.light_blue));
-//                }
-//                if (sugarLevelBeingChecked > 10) {
-//                    //  exclamationMark.setVisibility(View.VISIBLE);
-//                    bglRemark.setText("level is above normal range");
-//                    bglRemark.setTextColor(getResources().getColor(R.color.danger));
-//                }if(sugarLevelBeingChecked >4 && sugarLevelBeingChecked <10){
-//                    //  exclamationMark.setVisibility(View.INVISIBLE);
-//                    bglRemark.setVisibility(View.INVISIBLE);
-//                    bglRemark.setTextColor(getResources().getColor(R.color.light_blue));
-//
-//                }if(charSequence.toString().equals("")){
-//                    whatTimeTxt.setVisibility(View.INVISIBLE);
-//                    //txtDate.setVisibility(View.VISIBLE);
-//                    btnTimePicker.setVisibility(View.INVISIBLE);
-//                    btnDatePicker.setVisibility(View.INVISIBLE);
-//                    notesTitle.setVisibility(View.INVISIBLE);
-//                    txtNotes.setVisibility(View.INVISIBLE);
-//                    btnSaveEntry.setVisibility(View.INVISIBLE);
-//                }
-//            }
+
 
         }
 
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//            if(!charSequence.toString().isEmpty()) {
-//                double sugarLevelBeingChecked = Double.parseDouble(charSequence.toString());
-//                whatTimeTxt.setVisibility(View.VISIBLE);
-//                //txtDate.setVisibility(View.VISIBLE);
-//                btnTimePicker.setVisibility(View.VISIBLE);
-//                btnDatePicker.setVisibility(View.VISIBLE);
-//                notesTitle.setVisibility(View.VISIBLE);
-//                txtNotes.setVisibility(View.VISIBLE);
-//                btnSaveEntry.setVisibility(View.VISIBLE);
-//                if (sugarLevelBeingChecked < 4) {
-//                   // exclamationMark.setVisibility(View.VISIBLE);
-//                    bglRemark.setText("level is below normal range");
-//                    bglRemark.setTextColor(getResources().getColor(R.color.light_blue));
-//                }
-//                if (sugarLevelBeingChecked > 10) {
-//                  //  exclamationMark.setVisibility(View.VISIBLE);
-//                    bglRemark.setText("level is above normal range");
-//                    bglRemark.setTextColor(getResources().getColor(R.color.danger));
-//                }if(sugarLevelBeingChecked >4 && sugarLevelBeingChecked <10){
-//                  //  exclamationMark.setVisibility(View.INVISIBLE);
-//                    bglRemark.setVisibility(View.INVISIBLE);
-//                    bglRemark.setTextColor(getResources().getColor(R.color.light_blue));
-//
-//                }if(charSequence.toString().equals("")){
-//                    whatTimeTxt.setVisibility(View.INVISIBLE);
-//                    //txtDate.setVisibility(View.VISIBLE);
-//                    btnTimePicker.setVisibility(View.INVISIBLE);
-//                    btnDatePicker.setVisibility(View.INVISIBLE);
-//                    notesTitle.setVisibility(View.INVISIBLE);
-//                    txtNotes.setVisibility(View.INVISIBLE);
-//                    btnSaveEntry.setVisibility(View.INVISIBLE);
-//                }
-//            }
-
         }
 
         @Override
@@ -499,29 +393,24 @@ public class RecordActivity extends AppCompatActivity implements
             if(!editable.toString().isEmpty()) {
                 double sugarLevelBeingChecked = Double.parseDouble(editable.toString());
                 whatTimeTxt.setVisibility(View.VISIBLE);
-                //txtDate.setVisibility(View.VISIBLE);
                 btnTimePicker.setVisibility(View.VISIBLE);
                 btnDatePicker.setVisibility(View.VISIBLE);
                 notesTitle.setVisibility(View.VISIBLE);
                 txtNotes.setVisibility(View.VISIBLE);
                 btnSaveEntry.setVisibility(View.VISIBLE);
                 if (sugarLevelBeingChecked < 4) {
-                    // exclamationMark.setVisibility(View.VISIBLE);
                     bglRemark.setText("level is below normal range");
                     bglRemark.setTextColor(getResources().getColor(R.color.light_blue));
                 }
                 if (sugarLevelBeingChecked > 10 && sugarLevelBeingChecked < Integer.MAX_VALUE) {
-                    //  exclamationMark.setVisibility(View.VISIBLE);
                     bglRemark.setText("level is above normal range");
                     bglRemark.setTextColor(getResources().getColor(R.color.danger));
                 }if(sugarLevelBeingChecked >4 && sugarLevelBeingChecked <10){
-                    //  exclamationMark.setVisibility(View.INVISIBLE);
                     bglRemark.setVisibility(View.INVISIBLE);
                     bglRemark.setTextColor(getResources().getColor(R.color.light_blue));
 
                 }if(editable.toString().equals("")){
                     whatTimeTxt.setVisibility(View.INVISIBLE);
-                    //txtDate.setVisibility(View.VISIBLE);
                     btnTimePicker.setVisibility(View.INVISIBLE);
                     btnDatePicker.setVisibility(View.INVISIBLE);
                     notesTitle.setVisibility(View.INVISIBLE);
@@ -538,7 +427,7 @@ public class RecordActivity extends AppCompatActivity implements
      * @param al
      * @return
      */
-    private double overallAvg(ArrayList<Double> al) {
+    public double overallAvg(ArrayList<Double> al) {
         if (al.size() == 0) {
                 return 0;
         } else {

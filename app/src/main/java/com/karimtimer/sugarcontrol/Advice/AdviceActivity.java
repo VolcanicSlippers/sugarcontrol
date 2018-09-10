@@ -13,6 +13,14 @@ import com.karimtimer.sugarcontrol.Main.MainActivity;
 import com.karimtimer.sugarcontrol.R;
 import com.karimtimer.sugarcontrol.models.SectionsPageAdapater;
 
+/**
+ * @author Abdikariim Timer
+ * This class contains the code for the Activity screen that contains the code for the different Advice fragments.
+ * The user may swap between the the following three fragments:
+ * -Hyper Fragment: where the user views information about having high blood glucose lvls
+ * -Hypo Fragment: where the user views information about having low blood glucose lvls
+ * -Main Fragment: where the user views information about general diabetes support.
+ */
 public class AdviceActivity extends AppCompatActivity {
 
 
@@ -43,6 +51,7 @@ public class AdviceActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
     }
+
     private void setupViewPage(ViewPager viewPager) {
         SectionsPageAdapater adapter = new SectionsPageAdapater(getSupportFragmentManager());
         adapter.addFragment(new MainHypoFragment(), "Hypo\n Advice");

@@ -34,6 +34,11 @@ import java.util.Calendar;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * @author Abdikariim Timer
+ *
+ * Server side regarding the Bluetooth connection
+ */
 public class BluetoothBgl extends AppCompatActivity {
     private static final String TAG = "bluetoothBgl server";
 

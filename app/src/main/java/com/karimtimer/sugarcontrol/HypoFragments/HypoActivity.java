@@ -22,6 +22,9 @@ import com.karimtimer.sugarcontrol.HypoFragments.*;
 import com.karimtimer.sugarcontrol.R;
 import com.karimtimer.sugarcontrol.models.SectionsPageAdapater;
 
+/**
+ * @author Abdikariim Timer
+ */
 public class HypoActivity extends AppCompatActivity {
 
 

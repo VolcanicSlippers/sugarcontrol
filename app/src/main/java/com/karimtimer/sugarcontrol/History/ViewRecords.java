@@ -23,6 +23,9 @@ import com.karimtimer.sugarcontrol.models.Record;
 
 import java.util.ArrayList;
 
+/**
+ * @author Abdikariim Timer
+ */
 public class ViewRecords extends AppCompatActivity{
     private static final String TAG = "ViewDatabase";
     private Record record;

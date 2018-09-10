@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * @author Abdikariim Timer
+ */
 public class MainHypoFragment extends Fragment {
     private static final String TAG = "Main Hypo advice fragment";
 

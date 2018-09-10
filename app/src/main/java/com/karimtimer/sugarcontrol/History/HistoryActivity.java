@@ -29,6 +29,12 @@ import com.karimtimer.sugarcontrol.Main.MainActivity;
 import com.karimtimer.sugarcontrol.R;
 import com.karimtimer.sugarcontrol.models.Record;
 
+
+/**
+ * @author Abdikariim Timer
+ *
+ * This class provides te functionality for the user to see their previous bgl results.
+ */
 public class HistoryActivity extends AppCompatActivity {
     private static String TAG = "HistoryActivity";
 
@@ -43,8 +49,6 @@ public class HistoryActivity extends AppCompatActivity {
     private ImageView emote;
     private Context mCtx;
     private ImageView deleteIcon;
-
-//TODO: figure out how to click on card then show notes, carbs and other details with the post.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
