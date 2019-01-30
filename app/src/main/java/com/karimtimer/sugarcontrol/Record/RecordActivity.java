@@ -384,6 +384,10 @@ public class RecordActivity extends AppCompatActivity implements
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
         }
 
+        /**
+         * Method used to both transition the previous
+         * @param editable
+         */
         @Override
         public void afterTextChanged(Editable editable) {
             if(!editable.toString().isEmpty()) {

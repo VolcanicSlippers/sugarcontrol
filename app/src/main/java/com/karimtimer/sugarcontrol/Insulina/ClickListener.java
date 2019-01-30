@@ -53,11 +53,6 @@ public interface ClickListener {
     class HomeFragment extends android.support.v4.app.Fragment {
 
         private ImageView recordBtnBgl, recordBtnMedicine, recordBtnHbA1c, btnStats, btnHistory;
-        private Button previousEntriesBtn;
-        private Button moreDetail;
-        private Button hypoBtn;
-        private FloatingActionButton glucoseFAB, treatmentFAB, hba1cFAB;
-        private SpeedView speedometer;
         private TextView txtRecordBgl, txtRecordMeds, txtRecordHba1c, txtInsulina;
 
         //for connecting to the database, and recieving user information
@@ -79,9 +74,7 @@ public interface ClickListener {
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-            // Defines the xml file for the fragment
             View view = inflater.inflate(R.layout.first_fragment, parent, false);
-           // view.setBackgroundColor(GradientDrawable { getResources().getColor(Constant.color), Color.WHITE, Color.WHITE });
             setFirsTime(true);
             return view;
         }
@@ -120,10 +113,7 @@ public interface ClickListener {
             txtRecordHba1c.setVisibility(View.INVISIBLE);
             txtRecordMeds.setVisibility(View.INVISIBLE);
             txtRecordBgl.setVisibility(View.INVISIBLE);
-    //        btnHistory.setVisibility(View.INVISIBLE);
-    //        btnStats.setVisibility(View.INVISIBLE);
-    //        txtstatistics.setVisibility(View.INVISIBLE);
-    //        txthistory.setVisibility(View.INVISIBLE);
+
 
             transitionsContainer.findViewById(R.id.btn_record).setOnClickListener(new VisibleToggleClickListener() {
 
@@ -138,9 +128,6 @@ public interface ClickListener {
 
                     TransitionManager.beginDelayedTransition(transitionsContainer, set);
                     TransitionManager.beginDelayedTransition(transitionsContainer, new Recolor());
-    //                TransitionManager.beginDelayedTransition(transitionsContainer, new Rotate());
-     //               isRotated = true;
-    //                recordBtn.setRotation(isRotated ? 90 : 0);
                     if(isRotated() == false) {
                         Log.e(TAG, "HERE!");
                         RotateAnimation rotate = new RotateAnimation(0, 45, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
@@ -163,9 +150,6 @@ public interface ClickListener {
                     if(isRotated() ==true) setRotated(false);
                     else if(isRotated() ==false) setRotated(true);
                     recordBtn.setColorFilter(getResources().getColor(!isRotated() ? R.color.colorPrimaryDark :R.color.primary_text));
-    //                recordBtn.setBackgroundDrawable(
-    //                        new ColorDrawable(getResources().getColor(!isRotated() ? R.color.primary_text :
-    //                                R.color.danger)));
 
 
                     recordBtnBgl.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
@@ -174,10 +158,6 @@ public interface ClickListener {
                     txtRecordBgl.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
                     txtRecordMeds.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
                     txtRecordHba1c.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
-    //                btnHistory.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
-    //                btnStats.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
-    //                txthistory.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
-    //                txtstatistics.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
                 }
 
             });
@@ -227,16 +207,6 @@ public interface ClickListener {
                 }
             });
 
-
-
-    //        setLowerRange(4);
-    //        setUpperRange(10);
-
-            //gaugestuff
-            //speedometer = view.findViewById(R.id.speedView);
-            //speedometer.setIndicator(Indicator.Indicators.TriangleIndicator);
-            //speedometer.setWithTremble(false);
-
             insulinaHome = (ImageView) view.findViewById(R.id.insulina_main_page);
 
             insulinaHome.setOnClickListener(new View.OnClickListener() {
@@ -284,23 +254,6 @@ public interface ClickListener {
 
                 Log.e(TAG, today + ",,,,,,,,,,," + dateOfReadingAvg);
 
-    //            if (dateOfReadingAvg.equals(today)) {
-    //                Log.e(TAG, "we're in!" + daySugarLevelReading);
-    //               // speedometer.speedTo(daySugarLevelReadingNum);
-    //                if (getLowerRange() >= daySugarLevelReadingNum) {
-    //                    insulinaRemark.setText("That's pretty low...");
-    //                    insulinaRemark.setTextColor(getResources().getColor(R.color.blue));
-    //                } else if (getUpperRange() <= daySugarLevelReadingNum) {
-    //                    insulinaRemark.setText("That's pretty high!");
-    //                    insulinaRemark.setTextColor(getResources().getColor(R.color.danger));
-    //                } else {
-    //                    insulinaRemark.setText("Great result!");
-    //                    insulinaRemark.setTextColor(getResources().getColor(R.color.green));
-    //
-    //                }
-    //
-    //
-    //            }
             }
 
                     insulinaRemarker(isFirsTime());
@@ -315,36 +268,6 @@ public interface ClickListener {
                 }
 
             });
-            //binding data to the grid layout
-
-
-            //FAB menu stuff
-    //        glucoseFAB = (FloatingActionButton) view.findViewById(R.id.btn_record_bgl);
-    //        treatmentFAB = (FloatingActionButton) view.findViewById(R.id.menu_record_treatment);
-    //        hba1cFAB = (FloatingActionButton) view.findViewById(R.id.menu_record_HbA1c);
-
-    //        glucoseFAB.setOnClickListener(new View.OnClickListener() {
-    //            @Override
-    //            public void onClick(View view) {
-    //                startActivity(new Intent(getActivity(), RecordActivity.class));
-    //                getActivity().finish();
-    //
-    //            }
-    //        });
-    //        treatmentFAB.setOnClickListener(new View.OnClickListener() {
-    //            @Override
-    //            public void onClick(View view) {
-    //                startActivity(new Intent(getActivity(), MedicationChooseType.class));
-    //                getActivity().finish();
-    //            }
-    //        });
-    //        hba1cFAB.setOnClickListener(new View.OnClickListener() {
-    //            @Override
-    //            public void onClick(View view) {
-    //                startActivity(new Intent(getActivity(), RecordHba1c.class));
-    //                getActivity().finish();
-    //            }
-    //        });
 
 
         }
@@ -367,37 +290,9 @@ public interface ClickListener {
                     }
                     }
             }
-    //        else{
-    //            Log.e(TAG, "hmmmmmmmmmm...."+isFirsTime +", and the bgl is: "+ getLatestReading());
-    //
-    //            txtInsulina.setText("Your latest reading was\n"+ getLatestReading()+"mmol/L.\n");
-    //        }
         }
 
-        //    private static void createViews(LayoutInflater inflater, ViewGroup layout, List<String> titles) {
-    //        layout.removeAllViews();
-    //        for (String title : titles) {
-    //            recrod = (TextView) inflater.inflate(R.layout., layout, false);
-    //            textView.setText(title);
-    //            TransitionManager.setTransitionName(textView, title);
-    //            layout.addView(textView);
-    //        }
-    //    }
-    //    public int getUpperRange() {
-    //        return upperRange;
-    //    }
-    //
-    //    public void setUpperRange(int upperRange) {
-    //        this.upperRange = upperRange;
-    //    }
-    //
-    //    public int getLowerRange() {
-    //        return lowerRange;
-    //    }
-    //
-    //    public void setLowerRange(int lowerRange) {
-    //        this.lowerRange = lowerRange;
-    //    }
+
     public boolean isRotated() {
         return isRotated;
     }

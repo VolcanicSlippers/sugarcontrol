@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private View mHeaderView;
 
     // Make sure to be using android.support.v7.app.ActionBarDrawerToggle version.
-// The android.support.v4.app.ActionBarDrawerToggle has been deprecated.
+    // The android.support.v4.app.ActionBarDrawerToggle has been deprecated.
     private ActionBarDrawerToggle drawerToggle;
 
     @Override
