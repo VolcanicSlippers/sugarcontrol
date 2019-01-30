@@ -73,36 +73,32 @@ public class RecordActivity extends AppCompatActivity implements
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        toolbar.setBackgroundColor(Constant.color);
+        //toolbar.setBackgroundColor(Constant.color);
 
 
         setLowerRange(4);
         setUpperRange(10);
 
-        //initialising objects
-        btnDatePicker = (Button) findViewById(R.id.btn_date);
-        btnTimePicker = (Button) findViewById(R.id.btn_time);
-        // txtDate = (EditText) findViewById(R.id.in_date);
-        //  txtTime = (EditText) findViewById(R.id.in_time);
-
-        txtSugarLevel = (EditText) findViewById(R.id.edit_sugar_level);
+        btnDatePicker = findViewById(R.id.btn_date);
+        btnTimePicker = findViewById(R.id.btn_time);
+        txtSugarLevel = findViewById(R.id.edit_sugar_level);
         txtSugarLevel.addTextChangedListener(filterTextWatcher);
 
-        bglRemark = (TextView) findViewById(R.id.remark_on_blood_glucose_level);
-        whatTimeTxt = (TextView) findViewById(R.id.what_time_title);
-        notesTitle = (TextView) findViewById(R.id.text_notes);
-        //txtCarbs = (EditText) findViewById(R.id.edit_carbs);
+        bglRemark = findViewById(R.id.remark_on_blood_glucose_level);
+        whatTimeTxt = findViewById(R.id.what_time_title);
+        notesTitle = findViewById(R.id.text_notes);
+        //txtCarbs = (EditText) findViewById(R.id.edit_carbs); //text field for allowing user to record their carbs
         btnSaveEntry = (Button) findViewById(R.id.btn_save_entry);
         txtNotes = (EditText) findViewById(R.id.edit_notes);
-        //exclamationMark = (ImageView) findViewById(R.id.exclamation_mark_sug_level);
+        //exclamationMark = (ImageView) findViewById(R.id.exclamation_mark_sug_level); //redudnant?
 
 
         btnDatePicker.setOnClickListener(this);
         btnTimePicker.setOnClickListener(this);
         btnSaveEntry.setOnClickListener(this);
 
+        //firebase initialising stuff
         storage = FirebaseStorage.getInstance().getReference();
-
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -111,7 +107,7 @@ public class RecordActivity extends AppCompatActivity implements
         myRef3 =  mFirebaseDatabase.getReference().child("Range").child("SugarLevel").child(mAuth.getUid());
 
 
-       String sugarLevelText = txtSugarLevel.getText().toString();
+       //String sugarLevelText = txtSugarLevel.getText().toString();
 
         inRangeAL = new ArrayList<Double>();
         aboveRangeAL = new ArrayList<Double>();

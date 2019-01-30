@@ -38,7 +38,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:inputType="numberDecimal"
-                android:maxLength="3"
+                android:maxLength="4"
                 android:textSize="40sp" />
         </RelativeLayout>
         <LinearLayout
