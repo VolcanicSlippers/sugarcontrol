@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -51,7 +52,7 @@ public class RecordActivity extends AppCompatActivity implements
     private FirebaseDatabase database, mFirebaseDatabase;
     private DatabaseReference databaseRef1, databaseRef2;
     private FirebaseAuth mAuth;
-    private DatabaseReference myRef, myRef2, myRef3;
+    private DatabaseReference myRef, myRef2, refToUseBglLowerRange, refToUseBglUpperRange;
     private FirebaseUser mCurrentUser;
     private Toolbar toolbar;
     private ArrayList<Double> inRangeAL;
@@ -76,23 +77,25 @@ public class RecordActivity extends AppCompatActivity implements
         //toolbar.setBackgroundColor(Constant.color);
 
 
-        setLowerRange(4);
-        setUpperRange(10);
 
-        btnDatePicker = findViewById(R.id.btn_date);
-        btnTimePicker = findViewById(R.id.btn_time);
+
+
+
+
         txtSugarLevel = findViewById(R.id.edit_sugar_level);
         txtSugarLevel.addTextChangedListener(filterTextWatcher);
-
         bglRemark = findViewById(R.id.remark_on_blood_glucose_level);
         whatTimeTxt = findViewById(R.id.what_time_title);
         notesTitle = findViewById(R.id.text_notes);
+
+        //TODO: Allow user to record their carbs, autofilling with what they usually enter as the carb (maybe at that time of day if possible?)
         //txtCarbs = (EditText) findViewById(R.id.edit_carbs); //text field for allowing user to record their carbs
         btnSaveEntry = (Button) findViewById(R.id.btn_save_entry);
         txtNotes = (EditText) findViewById(R.id.edit_notes);
-        //exclamationMark = (ImageView) findViewById(R.id.exclamation_mark_sug_level); //redudnant?
 
-
+        //objects used for picking the: date, time,
+        btnDatePicker = findViewById(R.id.btn_date);
+        btnTimePicker = findViewById(R.id.btn_time);
         btnDatePicker.setOnClickListener(this);
         btnTimePicker.setOnClickListener(this);
         btnSaveEntry.setOnClickListener(this);
@@ -104,61 +107,47 @@ public class RecordActivity extends AppCompatActivity implements
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         myRef = mFirebaseDatabase.getReference().child("Record").child("SugarLevel").child(mAuth.getUid());
         myRef2 = mFirebaseDatabase.getReference().child("Current Record").child("SugarLevel").child(mAuth.getUid());
-        myRef3 =  mFirebaseDatabase.getReference().child("Range").child("SugarLevel").child(mAuth.getUid());
+        refToUseBglLowerRange = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("bglLowerRange");
+        refToUseBglUpperRange = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("bglUpperRange");
 
-
-       //String sugarLevelText = txtSugarLevel.getText().toString();
 
         inRangeAL = new ArrayList<Double>();
         aboveRangeAL = new ArrayList<Double>();
         belowRangeAL = new ArrayList<Double>();
         avgToday = new ArrayList<Double>();
 
-        myRef.getRef().addListenerForSingleValueEvent(new ValueEventListener() {
+        //set the range for the bgl
+        //TODO: using shared preferences, make this the users given lower range and upper range
+//        setLowerRange(4);
+//        setUpperRange(10);
+
+        refToUseBglLowerRange.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
-                int counter = 0;
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-
-                    String daySugarLevelReading = postSnapshot.child("day").getValue().toString();
-                    int daySugarLevelReadingNum = Integer.parseInt(daySugarLevelReading);
-
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd");
-                    Calendar currentCal = Calendar.getInstance();
-                    String currentdate = dateFormat.format(currentCal.getTime());
-
-
-                    if(daySugarLevelReading.equals(currentdate)){
-                        String sugarLevelString = postSnapshot.child("sugarLevel").getValue().toString();
-                        double sugarLevel = Double.parseDouble(sugarLevelString);
-                        avgToday.add(sugarLevel);
-                        Log.i(TAG, "sugar levels: " + avgToday.toString());
-
-                        if(sugarLevel < getLowerRange()){
-                            belowRangeAL.add(sugarLevel);
-                            Log.i(TAG, "below range AL" + belowRangeAL.toString());
-                        }if(sugarLevel > getUpperRange()){
-                            aboveRangeAL.add(sugarLevel);
-                            Log.i(TAG, "above range AL" + aboveRangeAL.toString());
-                        }if(sugarLevel >= getLowerRange() && sugarLevel <= getUpperRange()){
-                            inRangeAL.add(sugarLevel);
-                            Log.i(TAG, "overall in range AL" + inRangeAL.toString());
-                        }
-                    }
-
-                }
-
-
+                String lowerRange = dataSnapshot.getValue(String.class);
+                int lowerRangeValue = Integer.parseInt(lowerRange);
+                setLowerRange(lowerRangeValue);
             }
 
             @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.e(TAG, "Failed to read app title value.", error.toException());
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
 
+        refToUseBglUpperRange.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String upperRange = dataSnapshot.getValue(String.class);
+                int upperRangeValue = Integer.parseInt(upperRange);
+                setUpperRange(upperRangeValue);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         btnSaveEntry.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,7 +174,6 @@ public class RecordActivity extends AppCompatActivity implements
 
                                 @SuppressWarnings("VisibleForTests") final DatabaseReference newPost = myRef.push();
                                 @SuppressWarnings("VisibleForTests") final DatabaseReference currentRecordPost = myRef2;
-                                @SuppressWarnings("VisibleForTests") final DatabaseReference rangePost = myRef3;
 
                                 newPost.child("time").setValue(time);
                                 newPost.child("date").setValue(date);
@@ -202,12 +190,6 @@ public class RecordActivity extends AppCompatActivity implements
                                 currentRecordPost.child("month").setValue(getEmonth());
                                 currentRecordPost.child("year").setValue(getEyear());
                                 currentRecordPost.child("Recording").setValue(sugarLevel);
-
-                                rangePost.child("In Range").setValue(inRangeSize);
-                                rangePost.child("Below Range").setValue(belowRangeSize);
-                                rangePost.child("Above Range").setValue(aboveRangeSize);
-                                rangePost.child("Todays avg").setValue(todaysAvg);
-
 
                                 //post the stuff
                                 Log.e(TAG, "numer 1");
@@ -398,18 +380,24 @@ public class RecordActivity extends AppCompatActivity implements
                 notesTitle.setVisibility(View.VISIBLE);
                 txtNotes.setVisibility(View.VISIBLE);
                 btnSaveEntry.setVisibility(View.VISIBLE);
-                if (sugarLevelBeingChecked < 4) {
+                if (sugarLevelBeingChecked <= getLowerRange()) {
+                    // if bgl is below the users lower range show this remark
+                    bglRemark.setVisibility(View.VISIBLE);
                     bglRemark.setText("level is below normal range");
                     bglRemark.setTextColor(getResources().getColor(R.color.light_blue));
                 }
-                if (sugarLevelBeingChecked > 10 && sugarLevelBeingChecked < Integer.MAX_VALUE) {
+                else if (sugarLevelBeingChecked >= getUpperRange() && sugarLevelBeingChecked <= Integer.MAX_VALUE) {
+                    // if bgl is above the users upper range show this remark
+                    bglRemark.setVisibility(View.VISIBLE);
                     bglRemark.setText("level is above normal range");
                     bglRemark.setTextColor(getResources().getColor(R.color.danger));
-                }if(sugarLevelBeingChecked >4 && sugarLevelBeingChecked <10){
+                }
+                else if(sugarLevelBeingChecked > getLowerRange() && sugarLevelBeingChecked < getUpperRange()){
+                    // if bgl is normal
                     bglRemark.setVisibility(View.INVISIBLE);
-                    bglRemark.setTextColor(getResources().getColor(R.color.light_blue));
+                    //bglRemark.setTextColor(getResources().getColor(R.color.light_blue));
 
-                }if(editable.toString().equals("")){
+                } else{
                     whatTimeTxt.setVisibility(View.INVISIBLE);
                     btnTimePicker.setVisibility(View.INVISIBLE);
                     btnDatePicker.setVisibility(View.INVISIBLE);

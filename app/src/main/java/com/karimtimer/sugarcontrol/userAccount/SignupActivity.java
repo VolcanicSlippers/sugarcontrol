@@ -228,11 +228,6 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
                     return;
                 }
 
-//                if(){
-//                    Toast.makeText(getApplicationContext(), "both type 1 and 2?", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-
                 if (TextUtils.isEmpty(password)) {
                     Toast.makeText(getApplicationContext(), "Enter a password!", Toast.LENGTH_SHORT).show();
                     return;
