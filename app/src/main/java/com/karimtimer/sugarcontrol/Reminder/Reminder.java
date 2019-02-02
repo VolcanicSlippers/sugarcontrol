@@ -31,7 +31,6 @@ public class Reminder extends android.support.v4.app.Fragment {
 
     private NotificationManagerCompat notificationManager;
     private TextView timeView;
-    //    private EditText editTextTitle;
     private EditText editTextMessage;
     private Button btn1, btnCancel;
     private Toolbar toolbar;
@@ -72,23 +71,9 @@ public class Reminder extends android.support.v4.app.Fragment {
             }
         });
 
-
-//        String tiime = btnTimePicker.getText().toString();
-//        int time = Integer.parseInt(tiime);
-//         String daate = btnDatePicker.getText().toString();
-//         int date = Integer.parseInt(daate);
-//        int timeOfReminder = time+date;
-//
-//        String source = tiime;
-//        String[] tokens = source.split(":");
-//        int minutesToMs = Integer.parseInt(tokens[1]) * 60000;
-//        int hoursToMs = Integer.parseInt(tokens[0]) * 3600000;
-//        long total =minutesToMs + hoursToMs;
-
-
-//        editTextTitle = view.findViewById(R.id.edit_text_title);
-        //editTextMessage = view.findViewById(R.id.edit_text_message);
         btn1 = view.findViewById(R.id.btn_send_channel1);
+
+
         btnDatePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

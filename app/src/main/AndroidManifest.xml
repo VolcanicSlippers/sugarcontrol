@@ -102,6 +102,10 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".Settings.SettingsMainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".userAccount.Help"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
@@ -125,15 +129,15 @@
         <activity android:name=".userAccount.ChooseTheme"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Statistics.StatisticsMain"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+        <!--<activity android:name=".Statistics.StatisticsMain"-->
+            <!--android:configChanges="orientation"-->
+            <!--android:screenOrientation="portrait"/>-->
         <activity android:name=".Advice.AdviceActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Statistics.SendReport"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+        <!--<activity android:name=".Statistics.SendReport"-->
+            <!--android:configChanges="orientation"-->
+            <!--android:screenOrientation="portrait"/>-->
         <activity android:name=".Main.Preferences"/>
 
         <receiver android:name=".Emergency.EmergencyAppWidgetProvider">

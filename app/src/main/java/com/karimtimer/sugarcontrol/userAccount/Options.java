@@ -39,6 +39,7 @@ public class Options extends android.support.v4.app.Fragment {
     private FirebaseAuth auth;
     private DialogFragment privacyPolicyDialog;
 
+    //TODO: add themes
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
@@ -53,9 +54,6 @@ public class Options extends android.support.v4.app.Fragment {
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
         loadLocale();
-
-
-
 
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -75,24 +73,24 @@ public class Options extends android.support.v4.app.Fragment {
 
 
 
-        btnChangeEmail = (Button) view.findViewById(R.id.change_email_button);
-        btnChangePassword = (Button) view.findViewById(R.id.change_password_button);
-        btnSendResetEmail = (Button) view.findViewById(R.id.sending_pass_reset_button);
-        btnRemoveUser = (Button) view.findViewById(R.id.remove_user_button);
-        changeEmail = (Button) view.findViewById(R.id.changeEmail);
-        changePassword = (Button) view.findViewById(R.id.changePass);
-        sendEmail = (Button) view.findViewById(R.id.send);
-        remove = (Button) view.findViewById(R.id.remove);
+        btnChangeEmail = view.findViewById(R.id.change_email_button);
+        btnChangePassword = view.findViewById(R.id.change_password_button);
+        btnSendResetEmail = view.findViewById(R.id.sending_pass_reset_button);
+        btnRemoveUser = view.findViewById(R.id.remove_user_button);
+        changeEmail = view.findViewById(R.id.changeEmail);
+        changePassword = view.findViewById(R.id.changePass);
+        sendEmail = view.findViewById(R.id.send);
+        remove = view.findViewById(R.id.remove);
 //        signOut = (Button) view.findViewById(R.id.sign_out);
 //        backToHome = (Button) view.findViewById(R.id.btn_backHome);
 //        btnTheme = (Button) view.findViewById(R.id.btn_change_theme);
         btnChangeLanguage = view.findViewById(R.id.btn_change_language);
 
 
-        oldEmail = (EditText) view.findViewById(R.id.old_email);
-        newEmail = (EditText) view.findViewById(R.id.new_email);
-        password = (EditText) view.findViewById(R.id.password);
-        newPassword = (EditText) view.findViewById(R.id.newPassword);
+        oldEmail = view.findViewById(R.id.old_email);
+        newEmail = view.findViewById(R.id.new_email);
+        password = view.findViewById(R.id.password);
+        newPassword = view.findViewById(R.id.newPassword);
 
         oldEmail.setVisibility(View.GONE);
         newEmail.setVisibility(View.GONE);
@@ -103,7 +101,7 @@ public class Options extends android.support.v4.app.Fragment {
         sendEmail.setVisibility(View.GONE);
         remove.setVisibility(View.GONE);
 
-        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        progressBar = view.findViewById(R.id.progressBar);
 
         if (progressBar != null) {
             progressBar.setVisibility(View.GONE);
