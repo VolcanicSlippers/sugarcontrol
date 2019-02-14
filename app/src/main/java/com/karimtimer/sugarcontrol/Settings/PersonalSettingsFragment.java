@@ -11,6 +11,7 @@ import com.karimtimer.sugarcontrol.R;
 
 public class PersonalSettingsFragment extends Fragment {
 
+    private static final String TAG = "Personal settings fragment";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {

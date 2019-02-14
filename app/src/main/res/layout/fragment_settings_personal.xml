@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_marginTop="30dp"
+        android:id="@+id/text_first_name_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first_name"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <TextView
+        android:id="@+id/text_last_name_change"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/text_first_name_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/last_name"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="122dp" />
+
+    <TextView
+        android:id="@+id/text_height_change"
+        android:layout_below="@+id/text_last_name_change"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/height"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="185dp" />
+
+    <TextView
+        android:id="@+id/text_weight_change"
+        android:layout_below="@+id/text_height_change"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weight"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="263dp" />
+</RelativeLayout>
