@@ -73,6 +73,16 @@
         android:layout_toRightOf="@id/text_height_change"
         android:layout_alignBaseline="@id/text_height_change"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/height_units_change"
+        android:text="cm"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/field_height_change"
+        android:layout_alignBaseline="@+id/field_height_change"
+        />
 
 
     <TextView
@@ -94,6 +104,18 @@
         android:layout_toRightOf="@id/text_weight_change"
         android:layout_alignBaseline="@id/text_weight_change"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weight_units_change"
+        android:text="kg"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/field_weight_change"
+        android:layout_alignBaseline="@+id/field_weight_change"
+        />
+
 
     <TextView
         android:id="@+id/text_bgl_range"
