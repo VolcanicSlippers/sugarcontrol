@@ -13,7 +13,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +33,9 @@ import com.karimtimer.sugarcontrol.Main.MainActivity;
 import com.karimtimer.sugarcontrol.R;
 import com.karimtimer.sugarcontrol.Record.RecordActivity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PersonalSettingsFragment extends Fragment {
@@ -47,39 +52,7 @@ public class PersonalSettingsFragment extends Fragment {
     private StorageReference storage;
     private DatabaseReference myRef, refToFirstName, refToLastName, refToHeight, refToWeight, myRefForSettings;
     private FirebaseDatabase mFirebaseDatabase;
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getWeight() {
-        return weight;
-    }
-
-    public void setWeight(String weight) {
-        this.weight = weight;
-    }
-
-    public String getHeight() {
-        return height;
-    }
-
-    public void setHeight(String height) {
-        this.height = height;
-    }
-
+    private Spinner spinnerChangeDiabetesType;
     private String firstName, lastName, weight, height;
 
 
@@ -116,6 +89,42 @@ public class PersonalSettingsFragment extends Fragment {
         refToLastName = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("lastName");
         refToHeight = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("height");
         refToWeight = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("weight");
+
+        // Spinner element for diabetes type
+        spinnerChangeDiabetesType = view.findViewById(R.id.spinner_change_diabetes_type);
+
+       //TODO:fix the spinner over here
+        // Spinner click listener
+        // spinnerChangeDiabetesType.setOnItemSelectedListener(this);
+        // Spinner Drop down elements
+        List<String> categoriesDiabetes = new ArrayList<String>();
+        categoriesDiabetes.add("Prediabetes");
+        categoriesDiabetes.add("Type 1");
+        categoriesDiabetes.add("Type 2");
+        categoriesDiabetes.add("Gestational");
+        categoriesDiabetes.add("LADA");
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, categoriesDiabetes);
+
+        spinnerChangeDiabetesType.setAdapter(dataAdapter);
+
+        spinnerChangeDiabetesType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // On selecting a spinner item
+                String item = parent.getItemAtPosition(position).toString();
+
+
+                // Showing selected spinner item
+                Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         //first name
         refToFirstName.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -210,7 +219,7 @@ public class PersonalSettingsFragment extends Fragment {
                                 //post the stuff
                                 Log.e(TAG, "saved the fields!");
                                 String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                                mCurrentUser.
+
                                 Toast.makeText(getActivity(), " " + getFirstName()+", "+ getLastName(), Toast.LENGTH_SHORT).show();
 
 
@@ -283,5 +292,37 @@ public class PersonalSettingsFragment extends Fragment {
             }
         }
     };
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
 
 }

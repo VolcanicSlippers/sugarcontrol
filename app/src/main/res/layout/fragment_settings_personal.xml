@@ -118,15 +118,33 @@
 
 
     <TextView
-        android:id="@+id/text_bgl_range"
+        android:id="@+id/text_change_type"
         android:layout_below="@+id/text_weight_change"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/diabetes_type_settings"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <Spinner
+        android:layout_marginTop="16dp"
+        android:id="@+id/spinner_change_diabetes_type"
+        android:layout_below="@id/text_change_type"
+        style="@style/Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="match_parent"
+        android:hint="@string/diabetes_type"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/text_bgl_range"
+        android:layout_below="@+id/spinner_change_diabetes_type"
         android:layout_marginTop="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bgl_range"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="263dp" />
-
 
     <Button
         android:id="@+id/btn_save_personal_settings"

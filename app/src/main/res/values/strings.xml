@@ -89,6 +89,7 @@
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="save_personal_settings">Save \n Personal Settings</string>
+    <string name="diabetes_type_settings">Diabetes type:</string>
     <string name="bgl_range">What range will you aim to keep your blood sugar levels in?</string>
 
 
