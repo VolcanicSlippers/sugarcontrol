@@ -50,10 +50,16 @@ public class PersonalSettingsFragment extends Fragment {
     private FirebaseUser mCurrentUser;
     private FirebaseAuth mAuth;
     private StorageReference storage;
-    private DatabaseReference myRef, refToFirstName, refToLastName, refToHeight, refToWeight, myRefForSettings;
+    private DatabaseReference myRef, refToFirstName, refToLastName, refToDiabetesType, refToHeight, refToWeight, myRefForSettings;
     private FirebaseDatabase mFirebaseDatabase;
     private Spinner spinnerChangeDiabetesType;
-    private String firstName, lastName, weight, height;
+    private String firstName;
+    private String lastName;
+    private String weight;
+    private String height;
+
+
+    private String diabetesType;
 
 
 
@@ -89,15 +95,13 @@ public class PersonalSettingsFragment extends Fragment {
         refToLastName = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("lastName");
         refToHeight = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("height");
         refToWeight = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("weight");
+        refToDiabetesType = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("type");
 
         // Spinner element for diabetes type
         spinnerChangeDiabetesType = view.findViewById(R.id.spinner_change_diabetes_type);
 
        //TODO:fix the spinner over here
-        // Spinner click listener
-        // spinnerChangeDiabetesType.setOnItemSelectedListener(this);
-        // Spinner Drop down elements
-        List<String> categoriesDiabetes = new ArrayList<String>();
+        final List<String> categoriesDiabetes = new ArrayList<String>();
         categoriesDiabetes.add("Prediabetes");
         categoriesDiabetes.add("Type 1");
         categoriesDiabetes.add("Type 2");
@@ -107,24 +111,6 @@ public class PersonalSettingsFragment extends Fragment {
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, categoriesDiabetes);
 
         spinnerChangeDiabetesType.setAdapter(dataAdapter);
-
-        spinnerChangeDiabetesType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // On selecting a spinner item
-                String item = parent.getItemAtPosition(position).toString();
-
-
-                // Showing selected spinner item
-                Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
         //first name
         refToFirstName.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -148,6 +134,43 @@ public class PersonalSettingsFragment extends Fragment {
                 String lastName = dataSnapshot.getValue(String.class);
                 setLastName(lastName);
                 txtLastName.setText(getLastName());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        //DiabetesType
+        refToDiabetesType.addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("LongLogTag")
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String type = dataSnapshot.getValue(String.class);
+                Log.e(TAG, type);
+                setDiabetesType(type);
+
+                spinnerChangeDiabetesType.setSelection(categoriesDiabetes.indexOf(getDiabetesType()));
+                spinnerChangeDiabetesType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        // On selecting a spinner item
+                        String item = parent.getItemAtPosition(position).toString();
+
+
+                        // Showing selected spinner item
+                        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+
+                    }
+                });
+
             }
 
             @Override
@@ -186,6 +209,7 @@ public class PersonalSettingsFragment extends Fragment {
 //            }
 //        });
 
+        //TODO: save the diabetes type
         //update the first and last name
         btnSavePersonalSettings.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("LongLogTag")
@@ -193,56 +217,28 @@ public class PersonalSettingsFragment extends Fragment {
             public void onClick(View view) {
                 Log.d(TAG, "onClick: Attempting to add object to database.");
 
-                //if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
-                    //    String recordNumber = counter;
                     FirebaseUser user = mAuth.getCurrentUser();
                     String userID = mCurrentUser.getUid();
                     final String firstName = getFirstName();
                     final String lastName = getLastName();
 
-//                    if (getFirstName().equals()) {
-//                        if (!date.equals("Select Date")) {
-//                            if (!sugarLevel.equals("")) {
-
                                 @SuppressWarnings("VisibleForTests") final DatabaseReference newSettingChanges = mFirebaseDatabase.getReference().child("users");
-//
                                 Map<String, Object> update = new HashMap<>();
                                 update.put(mAuth.getUid()+"/firstName", getFirstName());
-                                //newSettingChanges.updateChildren(update);
 
                                 update.put(mAuth.getUid()+"/lastName", getLastName());
 
+                                update.put(mAuth.getUid()+"/type", getDiabetesType());
+
+
                                 newSettingChanges.updateChildren(update);
-//                              newSettingChanges.child("firstName").setValue(getFirstName());
-//                              newSettingChanges.child("lastName").setValue(getLastName());
 
                                 //post the stuff
                                 Log.e(TAG, "saved the fields!");
                                 String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
                                 Toast.makeText(getActivity(), " " + getFirstName()+", "+ getLastName(), Toast.LENGTH_SHORT).show();
-
-
-
-//                            } else {
-//                                Toast.makeText(RecordActivity.this, "Enter a Blood Glucose reading!", Toast.LENGTH_SHORT).show();
-//                            }
-//
-//                        } else {
-//                            Toast.makeText(RecordActivity.this, "Enter a valid date.", Toast.LENGTH_SHORT).show();
-//                        }
-//
-//
-//                    } else {
-//                        Toast.makeText(RecordActivity.this, "Enter a valid time.", Toast.LENGTH_SHORT).show();
-//
-//                    }
-
                 }
-               // mLastClickTime = SystemClock.elapsedRealtime();
-          //  }
-
-            //   }
         });
     }
 
@@ -324,5 +320,14 @@ public class PersonalSettingsFragment extends Fragment {
     public void setHeight(String height) {
         this.height = height;
     }
+
+    public String getDiabetesType() {
+        return diabetesType;
+    }
+
+    public void setDiabetesType(String diabetesType) {
+        this.diabetesType = diabetesType;
+    }
+
 
 }
