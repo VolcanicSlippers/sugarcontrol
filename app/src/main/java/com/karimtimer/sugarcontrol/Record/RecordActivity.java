@@ -32,9 +32,11 @@ import com.google.firebase.storage.StorageReference;
 import com.karimtimer.sugarcontrol.Main.MainActivity;
 import com.karimtimer.sugarcontrol.R;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 
 /**
@@ -120,6 +122,12 @@ public class RecordActivity extends AppCompatActivity implements
         //TODO: using shared preferences, make this the users given lower range and upper range
 //        setLowerRange(4);
 //        setUpperRange(10);
+
+        //TODO:Make the bgl buttons display the current time and date
+        btnTimePicker.setText(currentTime("hh:mm"));
+        btnDatePicker.setText(currentTime("dd/MM/yyyy"));
+
+
 
         refToUseBglLowerRange.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -219,6 +227,14 @@ public class RecordActivity extends AppCompatActivity implements
             //   }
         });
 
+    }
+
+    private String currentTime(String dateFormatterString) {
+        DateFormat dateFormatter = new SimpleDateFormat(dateFormatterString);
+        dateFormatter.setLenient(false);
+        Date today = new Date();
+        String s = dateFormatter.format(today);
+        return s;
     }
 
     public ArrayList<Double> getInRangeAL() {
