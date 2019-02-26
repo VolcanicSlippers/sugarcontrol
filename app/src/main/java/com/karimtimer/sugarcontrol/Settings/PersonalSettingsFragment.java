@@ -157,7 +157,7 @@ public class PersonalSettingsFragment extends Fragment {
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         // On selecting a spinner item
                         String item = parent.getItemAtPosition(position).toString();
-
+                        setDiabetesType(item);
 
                         // Showing selected spinner item
                         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
@@ -209,7 +209,6 @@ public class PersonalSettingsFragment extends Fragment {
 //            }
 //        });
 
-        //TODO: save the diabetes type
         //update the first and last name
         btnSavePersonalSettings.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("LongLogTag")
