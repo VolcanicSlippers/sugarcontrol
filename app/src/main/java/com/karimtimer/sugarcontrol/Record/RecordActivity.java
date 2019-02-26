@@ -35,6 +35,7 @@ import com.karimtimer.sugarcontrol.R;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -414,6 +415,13 @@ public class RecordActivity extends AppCompatActivity implements
                     //bglRemark.setTextColor(getResources().getColor(R.color.light_blue));
 
                 } else{
+                    String updateDate = btnDatePicker.getText().toString();
+                    if(updateDate.contains("/")){
+                        String[] arrTime =  updateDate.split("/");
+                        setEday(Integer.parseInt(arrTime[0]));
+                        setEmonth(Integer.parseInt(arrTime[1]));
+                        setEyear(Integer.parseInt(arrTime§[2]));
+                    }
                     whatTimeTxt.setVisibility(View.INVISIBLE);
                     btnTimePicker.setVisibility(View.INVISIBLE);
                     btnDatePicker.setVisibility(View.INVISIBLE);
