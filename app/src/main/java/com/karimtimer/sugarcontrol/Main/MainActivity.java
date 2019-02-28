@@ -25,6 +25,7 @@ import com.karimtimer.sugarcontrol.Emergency.MainEmergency;
 import com.karimtimer.sugarcontrol.Insulina.MainBotFragment;
 import com.karimtimer.sugarcontrol.R;
 import com.karimtimer.sugarcontrol.Reminder.Reminder;
+import com.karimtimer.sugarcontrol.Settings.SettingsMainActivity;
 import com.karimtimer.sugarcontrol.Tour.TourActivity;
 import com.karimtimer.sugarcontrol.userAccount.Options;
 
@@ -92,9 +93,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new MainBotFragment()).commit();
                 break;
             case R.id.nav_settings:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Options()).commit();
-                break;
+            startActivity(new Intent(MainActivity.this, SettingsMainActivity.class));
+            finish();
+            break;
             case R.id.nav_hypo:
                 startActivity(new Intent(MainActivity.this, MainEmergency.class));
                 finish();

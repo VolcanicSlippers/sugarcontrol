@@ -81,11 +81,17 @@
     <string name="title_statistics">Statistics</string>
 
 
-    <string name="first_name">First Name</string>
-    <string name="last_name">Last Name</string>
+    //settings
+    <string name="first_name">First Name:</string>
+    <string name="last_name">Last Name:</string>
+    <string name="height">Height:</string>
+    <string name="weight">Weight:</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
-    <string name="weight"></string>
+    <string name="save_personal_settings">Save \n Personal Settings</string>
+    <string name="diabetes_type_settings">Diabetes type:</string>
+    <string name="bgl_range">What range will you aim to keep your blood sugar levels in?</string>
+
 
     //main page
 
