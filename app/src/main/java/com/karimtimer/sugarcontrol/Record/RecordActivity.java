@@ -3,7 +3,9 @@ package com.karimtimer.sugarcontrol.Record;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.SystemClock;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -32,9 +34,14 @@ import com.google.firebase.storage.StorageReference;
 import com.karimtimer.sugarcontrol.Main.MainActivity;
 import com.karimtimer.sugarcontrol.R;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 
 
 /**
@@ -64,6 +71,8 @@ public class RecordActivity extends AppCompatActivity implements
     private ImageView exclamationMark;
     private TextView bglRemark, whatTimeTxt, notesTitle;
     private long mLastClickTime = 0;
+    private Date initialDate;
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,9 +86,12 @@ public class RecordActivity extends AppCompatActivity implements
         //toolbar.setBackgroundColor(Constant.color);
 
 
-
-
-
+        //TODO:Update the populate set methods
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        setEyear(localDate.getYear());
+        setEmonth(localDate.getMonthValue());
+        setEday(localDate.getDayOfMonth());
 
 
         txtSugarLevel = findViewById(R.id.edit_sugar_level);
@@ -120,6 +132,12 @@ public class RecordActivity extends AppCompatActivity implements
         //TODO: using shared preferences, make this the users given lower range and upper range
 //        setLowerRange(4);
 //        setUpperRange(10);
+
+        //TODO:Make the bgl buttons display the current time and date
+        btnTimePicker.setText(currentTime("HH:mm"));
+        btnDatePicker.setText(currentTime("dd/MM/yyyy"));
+
+
 
         refToUseBglLowerRange.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -219,6 +237,14 @@ public class RecordActivity extends AppCompatActivity implements
             //   }
         });
 
+    }
+
+    private String currentTime(String dateFormatterString) {
+        DateFormat dateFormatter = new SimpleDateFormat(dateFormatterString);
+        dateFormatter.setLenient(false);
+        Date today = new Date();
+        String s = dateFormatter.format(today);
+        return s;
     }
 
     public ArrayList<Double> getInRangeAL() {
@@ -398,6 +424,13 @@ public class RecordActivity extends AppCompatActivity implements
                     //bglRemark.setTextColor(getResources().getColor(R.color.light_blue));
 
                 } else{
+                    String updateDate = btnDatePicker.getText().toString();
+                    if(updateDate.contains("/")){
+                        String[] arrTime =  updateDate.split("/");
+                        setEday(Integer.parseInt(arrTime[0]));
+                        setEmonth(Integer.parseInt(arrTime[1]));
+                        setEyear(Integer.parseInt(arrTime[2]));
+                    }
                     whatTimeTxt.setVisibility(View.INVISIBLE);
                     btnTimePicker.setVisibility(View.INVISIBLE);
                     btnDatePicker.setVisibility(View.INVISIBLE);
