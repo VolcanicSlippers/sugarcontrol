@@ -158,10 +158,6 @@ public class PersonalSettingsFragment extends Fragment {
                         // On selecting a spinner item
                         String item = parent.getItemAtPosition(position).toString();
                         setDiabetesType(item);
-
-                        // Showing selected spinner item
-                        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-
                     }
 
                     @Override
@@ -236,7 +232,7 @@ public class PersonalSettingsFragment extends Fragment {
                                 Log.e(TAG, "saved the fields!");
                                 String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                                Toast.makeText(getActivity(), " " + getFirstName()+", "+ getLastName(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "changes made.", Toast.LENGTH_SHORT).show();
                 }
         });
     }
