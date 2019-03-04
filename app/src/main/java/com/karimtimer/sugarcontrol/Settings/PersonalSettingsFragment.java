@@ -20,6 +20,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.appyvet.materialrangebar.RangeBar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -50,14 +51,17 @@ public class PersonalSettingsFragment extends Fragment {
     private FirebaseUser mCurrentUser;
     private FirebaseAuth mAuth;
     private StorageReference storage;
-    private DatabaseReference myRef, refToFirstName, refToLastName, refToDiabetesType, refToHeight, refToWeight, myRefForSettings;
+    private DatabaseReference myRef, refToFirstName, refToLastName, refToDiabetesType,
+            refToHeight, refToWeight, myRefForSettings, refToBglLowerRange, refToBglUpperRange;
     private FirebaseDatabase mFirebaseDatabase;
     private Spinner spinnerChangeDiabetesType;
     private String firstName;
     private String lastName;
     private String weight;
     private String height;
-
+    private int bglLowerRange;
+    private int bglUpperRange;
+    private RangeBar bglRange;
 
     private String diabetesType;
 
@@ -83,6 +87,7 @@ public class PersonalSettingsFragment extends Fragment {
 
 
         btnSavePersonalSettings = view.findViewById(R.id.btn_save_personal_settings);
+        bglRange = (RangeBar) view.findViewById(R.id.bgl_range);
 
         //firebase initialising stuff
         storage = FirebaseStorage.getInstance().getReference();
@@ -96,6 +101,8 @@ public class PersonalSettingsFragment extends Fragment {
         refToHeight = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("height");
         refToWeight = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("weight");
         refToDiabetesType = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("type");
+        refToBglLowerRange = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("bglLowerRange");
+        refToBglUpperRange = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("bglLowerRange");
 
         // Spinner element for diabetes type
         spinnerChangeDiabetesType = view.findViewById(R.id.spinner_change_diabetes_type);
@@ -141,6 +148,54 @@ public class PersonalSettingsFragment extends Fragment {
 
             }
         });
+
+        //lower bgl range
+        refToBglLowerRange.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String bglRangeTxtLower = dataSnapshot.getValue(String.class);
+//                setBglLowerRange(Integer.parseInt(bglRangeTxtLower));
+//                bglRange.setTickStart(getBglLowerRange());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        //Upper bgl range
+        refToBglUpperRange.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String bglRangeTxtUpper = dataSnapshot.getValue(String.class);
+                setBglUpperRange(Integer.parseInt(bglRangeTxtUpper));
+//                bglRange.setTickEnd(getBglUpperRange());
+                bglRange.setRangePinsByValue(getBglLowerRange(), getBglUpperRange());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        bglRange.setTickStart(0);
+        bglRange.setTickEnd(14);
+
+        bglRange.setOnRangeBarChangeListener(new RangeBar.OnRangeBarChangeListener() {
+            @Override
+            public void onRangeChangeListener(RangeBar rangeBar, int leftPinIndex, int rightPinIndex, String leftPinValue, String rightPinValue) {
+                setBglLowerRange(leftPinIndex);
+                setBglUpperRange(rightPinIndex);
+            }
+        });
+
+        //bglRange.setInitialIndex(4);
+        //bglRange.setRangeCount(14);
+
+
+
 
         //DiabetesType
         refToDiabetesType.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -224,6 +279,11 @@ public class PersonalSettingsFragment extends Fragment {
                                 update.put(mAuth.getUid()+"/lastName", getLastName());
 
                                 update.put(mAuth.getUid()+"/type", getDiabetesType());
+
+                                update.put(mAuth.getUid()+"/bglLowerRange", Integer.toString(getBglLowerRange()));
+
+                                update.put(mAuth.getUid()+"/bglUpperRange", Integer.toString(getBglUpperRange()));
+
 
 
                                 newSettingChanges.updateChildren(update);
@@ -324,5 +384,20 @@ public class PersonalSettingsFragment extends Fragment {
         this.diabetesType = diabetesType;
     }
 
+    public int getBglLowerRange() {
+        return bglLowerRange;
+    }
+
+    public void setBglLowerRange(int bglLowerRange) {
+        this.bglLowerRange = bglLowerRange;
+    }
+
+    public int getBglUpperRange() {
+        return bglUpperRange;
+    }
+
+    public void setBglUpperRange(int bglUpperRange) {
+        this.bglUpperRange = bglUpperRange;
+    }
 
 }

@@ -148,9 +148,31 @@
                     tools:layout_editor_absoluteY="263dp" />
             </LinearLayout>
 
+            <com.appyvet.materialrangebar.RangeBar
+                android:id="@+id/bgl_range"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:mrb_pinMaxFont="10sp"
+                app:mrb_rangeBarPaddingBottom="12dp"
+                app:mrb_connectingLineColor="@color/colorPrimary"
+                app:mrb_pinColor="@color/colorPrimaryDark"
+                app:mrb_selectorColor="@color/colorPrimaryDark"
+                app:mrb_selectorBoundaryColor="@color/grey"
+                app:mrb_selectorBoundarySize="2dp"
+                app:mrb_pinTextColor="@color/grey"
+                app:mrb_selectorSize="10dp"
+                app:mrb_temporaryPins="true"
+                app:mrb_tickEnd="10"
+                app:mrb_tickInterval="1"
+                app:mrb_tickStart="5"/>
+
             <Button
                 android:id="@+id/btn_save_personal_settings"
                 android:layout_width="wrap_content"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/text_bgl_range"
