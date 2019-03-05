@@ -44,7 +44,7 @@ public class PersonalSettingsFragment extends Fragment {
     private static final String TAG = "Personal settings fragment";
 
     //TODO: create security checks or checks of some kind for the fields being allowed through
-    private TextView txtFirstName, txtLastName, txtHeight, txtWeight;
+    private TextView txtFirstName, txtLastName, txtHeight, txtWeight, txtLowerBgl, txtUpperBgl;
     private Button btnSavePersonalSettings;
     //for connecting to the database, and recieving user information
     private DatabaseReference mDatabaseCurrentRecord, mDatabaseRange;
@@ -81,6 +81,8 @@ public class PersonalSettingsFragment extends Fragment {
 
         txtFirstName = view.findViewById(R.id.field_first_name_change);
         txtLastName = view.findViewById(R.id.field_last_name_change);
+        txtLowerBgl = view.findViewById(R.id.bgl_lower_text_view);
+        txtUpperBgl = view.findViewById(R.id.bgl_upper_text_view);
 
         txtFirstName.addTextChangedListener(filterTextWatcher);
         txtLastName.addTextChangedListener(filterTextWatcher2);
@@ -102,7 +104,7 @@ public class PersonalSettingsFragment extends Fragment {
         refToWeight = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("weight");
         refToDiabetesType = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("type");
         refToBglLowerRange = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("bglLowerRange");
-        refToBglUpperRange = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("bglLowerRange");
+        refToBglUpperRange = mFirebaseDatabase.getReference().child("users").child(mAuth.getUid()).child("bglUpperRange");
 
         // Spinner element for diabetes type
         spinnerChangeDiabetesType = view.findViewById(R.id.spinner_change_diabetes_type);
@@ -154,8 +156,10 @@ public class PersonalSettingsFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String bglRangeTxtLower = dataSnapshot.getValue(String.class);
-//                setBglLowerRange(Integer.parseInt(bglRangeTxtLower));
+                setBglLowerRange(Integer.parseInt(bglRangeTxtLower));
 //                bglRange.setTickStart(getBglLowerRange());
+//                bglRange.setRangePinsByValue(getBglLowerRange(), getBglUpperRange());
+
             }
 
             @Override
@@ -164,14 +168,19 @@ public class PersonalSettingsFragment extends Fragment {
             }
         });
 
+
+
         //Upper bgl range
         refToBglUpperRange.addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("LongLogTag")
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String bglRangeTxtUpper = dataSnapshot.getValue(String.class);
                 setBglUpperRange(Integer.parseInt(bglRangeTxtUpper));
 //                bglRange.setTickEnd(getBglUpperRange());
+                Log.e(TAG, getBglLowerRange() + "and upper: " + getBglUpperRange());
                 bglRange.setRangePinsByValue(getBglLowerRange(), getBglUpperRange());
+
             }
 
             @Override
@@ -182,7 +191,6 @@ public class PersonalSettingsFragment extends Fragment {
 
         bglRange.setTickStart(0);
         bglRange.setTickEnd(14);
-
         bglRange.setOnRangeBarChangeListener(new RangeBar.OnRangeBarChangeListener() {
             @Override
             public void onRangeChangeListener(RangeBar rangeBar, int leftPinIndex, int rightPinIndex, String leftPinValue, String rightPinValue) {
