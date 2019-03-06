@@ -196,6 +196,8 @@ public class PersonalSettingsFragment extends Fragment {
             public void onRangeChangeListener(RangeBar rangeBar, int leftPinIndex, int rightPinIndex, String leftPinValue, String rightPinValue) {
                 setBglLowerRange(leftPinIndex);
                 setBglUpperRange(rightPinIndex);
+                txtUpperBgl.setText(Integer.toString(rightPinIndex));
+                txtLowerBgl.setText(Integer.toString(leftPinIndex));
             }
         });
 
@@ -351,6 +353,7 @@ public class PersonalSettingsFragment extends Fragment {
             }
         }
     };
+
 
     public String getFirstName() {
         return firstName;
