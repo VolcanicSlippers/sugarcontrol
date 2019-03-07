@@ -57,17 +57,17 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
-        btnSignIn = (Button) findViewById(R.id.sign_in_button);
-        btnSignUp = (Button) findViewById(R.id.sign_up_button);
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        btnSignIn = findViewById(R.id.sign_in_button);
+        btnSignUp = findViewById(R.id.sign_up_button);
+        inputEmail = findViewById(R.id.email);
+        inputPassword = findViewById(R.id.password);
+        progressBar = findViewById(R.id.progressBar);
         //btnResetPassword = (Button) findViewById(R.id.btn_reset_password);
 
-        inputfirstName = (EditText) findViewById(R.id.first_name);
-        inputlastName = (EditText) findViewById(R.id.last_name);
-       // inputweight = (EditText) findViewById(R.id.editText_weight);
-        //inputheight = (EditText) findViewById(R.id.editText_height);
+        inputfirstName = findViewById(R.id.first_name);
+        inputlastName = findViewById(R.id.last_name);
+        inputweight = findViewById(R.id.weight);
+        inputheight = findViewById(R.id.height);
         // dType1 = (CheckBox) findViewById(R.id.checkBox_diabetes_type_1);
         // dType2 = (CheckBox) findViewById(R.id.checkBox_diabetes_type_2);
         // btnDiabetesType = (Button) findViewById(R.id.btn_diabetes_type);
@@ -85,9 +85,9 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
         spinnerDiabetesType = (Spinner) findViewById(R.id.spinner);
 
         //Spinner element for weight
-       // spinnerWeight = (Spinner) findViewById(R.id.spinner_weight);
+       spinnerWeight = (Spinner) findViewById(R.id.spinner_weight);
         //height
-       // spinnerHeight = (Spinner) findViewById(R.id.spinner_height);
+       spinnerHeight = (Spinner) findViewById(R.id.spinner_height);
 
 
         // Spinner click listener
