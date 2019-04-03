@@ -57,17 +57,17 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
-        btnSignIn = (Button) findViewById(R.id.sign_in_button);
-        btnSignUp = (Button) findViewById(R.id.sign_up_button);
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        btnSignIn = findViewById(R.id.sign_in_button);
+        btnSignUp = findViewById(R.id.sign_up_button);
+        inputEmail = findViewById(R.id.email);
+        inputPassword = findViewById(R.id.password);
+        progressBar = findViewById(R.id.progressBar);
         //btnResetPassword = (Button) findViewById(R.id.btn_reset_password);
 
-        inputfirstName = (EditText) findViewById(R.id.first_name);
-        inputlastName = (EditText) findViewById(R.id.last_name);
-       // inputweight = (EditText) findViewById(R.id.editText_weight);
-        //inputheight = (EditText) findViewById(R.id.editText_height);
+        inputfirstName = findViewById(R.id.first_name);
+        inputlastName = findViewById(R.id.last_name);
+        inputweight = findViewById(R.id.weight);
+        inputheight = findViewById(R.id.height);
         // dType1 = (CheckBox) findViewById(R.id.checkBox_diabetes_type_1);
         // dType2 = (CheckBox) findViewById(R.id.checkBox_diabetes_type_2);
         // btnDiabetesType = (Button) findViewById(R.id.btn_diabetes_type);
@@ -84,10 +84,10 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
         // Spinner element for diabetes type
         spinnerDiabetesType = (Spinner) findViewById(R.id.spinner);
 
-        //Spinner element for weight
-       // spinnerWeight = (Spinner) findViewById(R.id.spinner_weight);
-        //height
-       // spinnerHeight = (Spinner) findViewById(R.id.spinner_height);
+//        //Spinner element for weight
+//       spinnerWeight = (Spinner) findViewById(R.id.spinner_weight);
+//        //height
+//       spinnerHeight = (Spinner) findViewById(R.id.spinner_height);
 
 
         // Spinner click listener
@@ -116,21 +116,12 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
         categoriesDiabetes.add("Gestational");
         categoriesDiabetes.add("LADA");
 
-//        List<String> categoriesHeight = new ArrayList<String>();
-//        categoriesHeight.add("metres");
-//        categoriesHeight.add("feet");
-//
-//        List<String> categoriesWeight = new ArrayList<String>();
-//        categoriesWeight.add("kilograms");
-//        categoriesWeight.add("stones");
 
         spinnerDiabetesType.setPrompt("Diabetes Type");
 
         // Creating adapter for spinner
         final ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categoriesDiabetes);
 
-     //   ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categoriesHeight);
-       // ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categoriesWeight);
 
 
         // Drop down layout style - list view with radio button
@@ -188,8 +179,8 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
 
                 String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
-            //    final String weight = inputweight.getText().toString().trim();
-            //    final String height = inputheight.getText().toString().trim();
+                final String weight = inputweight.getText().toString().trim();
+                final String height = inputheight.getText().toString().trim();
                 final String firstName = inputfirstName.getText().toString().trim();
                 final String lastName = inputlastName.getText().toString().trim();
                 final String diaType = spinnerDiabetesType.getSelectedItem().toString();
@@ -208,21 +199,21 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
                     return;
                 }
 
+                if (TextUtils.isEmpty(weight)) {
+                    Toast.makeText(getApplicationContext(), "please enter your weight.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(height)) {
+                    Toast.makeText(getApplicationContext(), "please enter your height.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if(TextUtils.isEmpty(bglLowerRange) || TextUtils.isEmpty(bglUpperRange)){
                     Toast.makeText(getApplicationContext(), "please enter a target range for your bgl.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-
-//                if (TextUtils.isEmpty(height)) {
-//                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//
-//                if (TextUtils.isEmpty(weight)) {
-//                    Toast.makeText(getApplicationContext(), "please enter your weight.", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter an email address!", Toast.LENGTH_SHORT).show();
                     return;
@@ -247,7 +238,7 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 FirebaseUser user = auth.getCurrentUser();
                                 try {
-                                    writeNewUser(user.getUid(), getUsernameFromEmail(user.getEmail()), user.getEmail(), bglLowerRange, bglUpperRange, firstName, lastName, diaType, medType);
+                                    writeNewUser(user.getUid(), getUsernameFromEmail(user.getEmail()), user.getEmail(), bglLowerRange, bglUpperRange, firstName, lastName, diaType, medType, weight, height);
                                 }catch(Exception e){
                                     Toast.makeText(SignupActivity.this, "sd",
                                             Toast.LENGTH_SHORT).show();
@@ -282,7 +273,7 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
         progressBar.setVisibility(View.GONE);
     }
 
-    public void writeNewUser(String userId, String username, String email, String bglLowerRange, String bglUpperRange, String firstName, String lastName, String type, String medType) {
+    public void writeNewUser(String userId, String username, String email, String bglLowerRange, String bglUpperRange, String firstName, String lastName, String type, String medType, String weight, String height) {
         User user = new User(username, email, bglLowerRange, bglUpperRange, firstName, lastName, type, medType);
 
         FirebaseDatabase.getInstance().getReference().child("users").child(userId).setValue(user);

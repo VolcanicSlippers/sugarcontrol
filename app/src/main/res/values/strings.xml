@@ -29,6 +29,8 @@
     <string name="send_password_reset_email">Send Password reset email</string>
     <string name="remove_user">Remove user</string>
     <string name="new_pass">New Password</string>
+    <string name="kg">Kg</string>
+    <string name="cm">cm</string>
 
     //AfterSignUp
     <string name="about_alpha_test">Welcome to Sugar Control!</string>
@@ -82,14 +84,14 @@
 
 
     //settings
-    <string name="first_name">First Name:</string>
-    <string name="last_name">Last Name:</string>
-    <string name="height">Height:</string>
-    <string name="weight">Weight:</string>
-    <string name="hint_email">Email</string>
-    <string name="hint_password">Password</string>
+    <string name="first_name">Your First Name:</string>
+    <string name="last_name">Your Last Name:</string>
+    <string name="height">Your Height:</string>
+    <string name="weight">Your Weight:</string>
+    <string name="hint_email">Your Email</string>
+    <string name="hint_password">Your Password</string>
     <string name="save_personal_settings">Save \n Personal Settings</string>
-    <string name="diabetes_type_settings">Diabetes type:</string>
+    <string name="diabetes_type_settings">Your Diabetes type:</string>
     <string name="bgl_range">What range will you aim to keep your blood sugar levels in?</string>
 
 

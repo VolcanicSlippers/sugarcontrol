@@ -97,6 +97,50 @@
             android:layout_height="wrap_content"/>
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:gravity="left"
+                android:id="@+id/weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/weight"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:maxLength="6"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/kg"/>
+
+            <EditText
+                android:layout_marginLeft="40dp"
+                android:id="@+id/height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/height"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:maxLength="6"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/cm"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
