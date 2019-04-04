@@ -140,7 +140,6 @@ public class StatsInfoFragment extends Fragment {
         txtDailyAvg = (TextView) view.findViewById(R.id.data_txt_avg_today_bgl);
         txtSevenDayAvg = (TextView) view.findViewById(R.id.data_weekly_bgl_stat);
         txtMonthDayAvg = (TextView) view.findViewById(R.id.data_monthly_bgl_stat);
-        //txtHbA1cAvg = (TextView) view.findViewById(R.id.text_avg_hba1c_user);
         dataTxtNumOfEntriesToday = (TextView) view.findViewById(R.id.data_txt_main_screen_number_of_entries_today);
         dataTxtEntriesInRange = (TextView) view.findViewById(R.id.data_txt_entries_in_range);
         dataTxtEntriesBelowRange = (TextView) view.findViewById(R.id.data_txt_main_screen_entries_below_range);
@@ -184,8 +183,12 @@ public class StatsInfoFragment extends Fragment {
                     for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                         Log.e(TAG, "lmao" + postSnapshot.child("sugarLevel").getValue());
 
-                        String bglRecordingDay = postSnapshot.child("day").getValue().toString();
-                        int bglRecordingDayNum = Integer.parseInt(bglRecordingDay);
+                        String bglRecordingDay = "";
+                        int bglRecordingDayNum = 0;
+                        if (!postSnapshot.child("day").getValue().toString().isEmpty()) {
+                            bglRecordingDay = postSnapshot.child("day").getValue().toString();
+                            bglRecordingDayNum = Integer.parseInt(bglRecordingDay);
+                        }
 
                         String dfd = postSnapshot.child("sugarLevel").getValue().toString();
 

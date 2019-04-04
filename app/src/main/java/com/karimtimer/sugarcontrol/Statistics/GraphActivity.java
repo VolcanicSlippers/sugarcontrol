@@ -51,7 +51,7 @@ public class GraphActivity extends AppCompatActivity {
     private void setupViewPage(ViewPager viewPager) {
         SectionsPageAdapater adapter = new SectionsPageAdapater(getSupportFragmentManager());
         adapter.addFragment(new StatsInfoFragment(), "Statistics");
-        adapter.addFragment(new GraphViewFragment(), "Graph");
+        //adapter.addFragment(new GraphViewFragment(), "Graph");
         viewPager.setAdapter(adapter);
     }
 
